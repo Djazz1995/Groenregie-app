@@ -1,0 +1,51 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href={{ asset('css/general.css') }} />
+    <link rel="stylesheet" href={{ asset('css/navbar.css') }} />
+    <link rel="stylesheet" href={{ asset('css/homepage.css') }} />
+    <link rel="stylesheet" href={{ asset('css/gallery.css') }} />
+    
+{% endblock stylesheets %}
+
+{% block title %}{{pageTitle}}{% endblock title %}
+
+{% block body %}
+	<div class="nav-seperator"></div>
+
+	<!-- JUMBOTRON -->
+	<div class="jumbotron jumbotron-fluid align-center transparent white padding-bottom-15 reduced-jumbotron">
+		<div class="container">
+			<h2>Impressies</h2>
+			<p class="lead">
+				Een overzicht van onze uitgevoerde projecten.
+			</p>
+		</div>
+	</div>
+	<!-- END JUMBOTRON -->
+
+	<!-- Fluid content -->
+	<div class="container-fluid">
+		<div class="row">
+			{% for impression in modernGardens %}
+			<div class="col-lg-4 col-md-6 col-xs-12 gallery-col">
+				<div class="photo-card box-shadow">
+					<a href={{path('impression_specific', {'name': impression.urlNaam, 'id': impression.id})}}>
+						<img class="card-img-top" alt="Thumbnail" style="width: 100%; display: block;" src={{impression.thumbnail.file.url}}>
+					</a>
+					<div class="card-body no-padding-left no-padding-right">
+						<p class="card-text">
+							{{impression.titel}}
+						</p>
+					</div>
+				</div>
+			</div>
+			{% endfor %}
+		</div>
+	</div>
+	<!-- end fluid content -->
+{% endblock body %}
+
+{% block javascripts %}
+
+{% endblock javascripts %}

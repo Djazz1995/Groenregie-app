@@ -1,0 +1,163 @@
+.carousel {
+    height: 100vh;
+    overflow: hidden;
+}
+
+.videocontainer {
+    /* position: relative; */
+    height:100%;
+    width:100%;
+    overflow: hidden;
+}
+
+#entry-video {
+    min-width: 100%;
+    min-height: 100vh;
+}
+
+.carousel-item img {
+    height: 100vh;
+    width: auto;
+    min-width: auto;
+}
+
+.homepage-welcome-text {
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    font-size: 150%;
+    top: 20%;
+    width: 350px;
+    position: absolute;
+    text-align: center;
+    background: rgba(36, 38, 37, 0.39) !important;
+    padding: 2rem 1rem;
+    padding-bottom: 0;
+    -webkit-animation-name: welcome-text-animation; /* Safari 4.0 - 8.0 */
+    -webkit-animation-duration: 4s; /* Safari 4.0 - 8.0 */
+    animation-name: welcome-text-animation;
+    animation-duration: 4s;
+    z-index: 99;
+}
+
+.welcome-text { 
+    font-family: 'Teko', sans-serif;
+    text-transform: uppercase;
+}
+
+.homepage-welcome-text hr {
+    margin-bottom: 0;
+}
+
+@keyframes welcome-text-animation {
+    from {left: -1800px;}
+    to {left: 0;}
+}
+
+.type-garden {
+    height: 470px;
+}
+
+.type-garden-photo {
+    width:100%;
+    background-size: cover;
+    /* -moz-background-size: cover;
+    -webkit-background-size: cover;
+    -o-background-size: cover; */
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.natural-garden {
+    background-image: url(../images/natural-garden.jpg);
+}
+
+.modern-garden {
+    background-image: url(../images/modern-garden.jpg);
+}
+
+.type-garden-header {
+    padding-left: 10%;
+    padding-top: 50px;
+    padding-right: 10%;
+}
+
+.customer-reaction {
+    margin-top: 32px;
+    padding-top: 32px;
+}
+
+.customer-reaction-sum {
+    margin-top: 40px;
+    padding-bottom: 20px;
+}
+
+.customer-reaction-item {
+    margin-top: 30px;
+}
+
+.customer-reaction-header{
+    margin-top: 10px;
+}
+
+.customer-reaction-content { 
+    width: 80%;
+    margin-left: 10%;
+    margin-right:10%;
+    position:relative;
+}
+
+.customer-reaction-colon {
+    /* position: absolute; */
+    margin-top: 10px;
+    margin-bottom: 20px;
+    bottom:-40px;
+    justify-content: center;
+}
+
+@media (max-width: 850px) {
+    .homepage-welcome-text {
+        top: 30%;
+        width: 90%;
+        left: 5%;
+        right: 5%;
+        -webkit-animation-name: none; /* Safari 4.0 - 8.0 */
+        animation-name: none;
+    }
+ }
+
+ /* SLICK SLIDESHOW */
+ 	.slideshow {
+		position: relative;
+		z-index: 1;
+		height: 100vh;
+	}
+
+	.slideshow * {
+		outline: none;
+	}
+
+	.slideshow .slider {
+		box-shadow: 0 20px 50px -25px rgba(0, 0, 0, 1);
+	}
+
+	.slideshow .slider-track {
+		transition: all 4s cubic-bezier(0.7, 0, 0.3, 1);
+	}
+
+	.slideshow .item {
+		height: 100%;
+		position: relative;
+		z-index: 1;
+	}
+
+	.slideshow .item img {
+		height: 100vh;
+		transition: all 4s cubic-bezier(0.7, 0, 0.3, 1);
+		transform: scale(1.5);
+	}
+
+	.slideshow .item.slick-active img {
+		transform: scale(1);
+	}

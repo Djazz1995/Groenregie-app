@@ -1,0 +1,85 @@
+.contact-body {
+    color: #737977 !important;
+}
+
+.contact-body h4 {
+    color: #d6d8db;
+}
+
+.white {
+    color: white;
+}
+
+.contact-container {
+    position: absolute;
+    color: white;
+    top: 20%;
+    width: 35%;
+    left: 7%;
+    /* background: rgba(36, 38, 37, 0.65) !important; */
+    padding: 2rem 1rem;
+    margin-bottom: 5%;
+}
+
+.contact-icons {
+    /* margin-top: 50px;
+    margin-bottom: 50px; */
+}
+
+.contact-icon {
+    text-align: center;
+    margin-top: 35px;
+    margin-bottom: 35px;
+    min-width: 170px;
+}
+
+.contact-container .fas {
+    color: #8CC63F;
+    font-size: 150%;
+    margin-bottom: 15px;
+}
+
+.embed-maps-container #map {
+    height: 100vh;
+}
+
+.contact-map #map {
+    height: 500px;
+    display: block;
+}
+
+.contact-content {
+    margin-top: 30px;
+}
+
+.form-control {
+    background-color: #383b3a;
+    border: none;
+    border-radius: 0;
+}
+
+.form-control::placeholder {
+    color: rgb(179, 179, 179);
+}
+
+@media (max-width: 850px) {
+    .contact-container {
+        position: relative;
+        width: 100%;
+        top: 0;
+        left: 0;
+    }
+
+    .carousel {
+        display:none;
+    }
+
+    .absolute-navbar {
+        position: relative;
+        background: #242625 !important;
+    }
+
+    .contact-icon {
+        margin-top: 15px;
+    }
+ }

@@ -1,0 +1,14 @@
+.our-partner-media {
+    margin-top: 32px;
+}
+
+.our-partner-media img {
+    max-width: 100%;
+}
+
+@media (max-width: 850px) {
+    .more-info {
+        float: none !important;
+        width: 100%;
+    }
+}

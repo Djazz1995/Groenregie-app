@@ -1,0 +1,106 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href={{ asset('css/general.css') }} />
+    <link rel="stylesheet" href={{ asset('css/navbar.css') }} />
+    <link rel="stylesheet" href={{ asset('css/homepage.css') }} />
+    <link rel="stylesheet" href={{ asset('css/contact.css') }} />
+{% endblock stylesheets %}
+
+{% block title %}Contact{% endblock title %}
+
+{% block body %}
+<div class="contact-body">
+    <div class="contact-map">
+		<div class="d-block w-100" id="map"></div>
+	</div>
+
+	<div class="contact-content container content">
+		<div class="row">
+			<div class="contact-adres col-xs-12 col-md-3">
+				<h4>Adres</h4>
+				<p>
+					<span class="white">{{companyName}}</span><br> {{address}}<br> {{zipcode}} {{place}}<br> {{country}}
+				</p>
+				<p>
+					T: <span class="white">{{telephone}}</span><br> E: <span class="white">{{email}}</span><br> I:
+					{{website}}
+				</p>
+			</div>
+			<div class="contact-form col-xs-12 col-md-7">
+				<h4>Contactformulier</h4>
+				<form>
+					<div class="form-group">
+						<label for="exampleInputEmail1">Uw naam*</label>
+						<input type="text" name="name" class="form-control" placeholder="Naam">
+					</div>
+					<div class="form-group">
+						<label for="exampleInputEmail1">E-mailadres*</label>
+						<input type="email" class="form-control" name="email" placeholder="Enter email">
+					</div>
+					<div class="form-group">
+						<label for="exampleInputPassword1">Telefoonnummer*</label>
+						<input type="password" class="form-control" name="phonenumber" placeholder="telefoonnummer">
+					</div>
+					<div class="form-group">
+						<label for="exampleInputPassword1">Plaats*</label>
+						<input type="password" class="form-control" name="place" placeholder="Plaats">
+					</div>
+					<div class="form-group">
+						<label for="exampleInputPassword1">Onderwerp*</label>
+						<input type="password" class="form-control" name="subject" placeholder="Onderwerp">
+					</div>
+					<div class="form-group">
+						<label for="exampleFormControlTextarea1">Bericht*</label>
+						<textarea class="form-control" name="message" rows="3"></textarea>
+					</div>
+					<div class="form-group">
+						<input type="checkbox" class="form-check-input" id="exampleCheck1">
+						<label class="form-check-label" for="exampleCheck1">
+							Ja, ik neem kennis van de privacy statement en door het formulier in te vullen ga ik daarmee akkoord.
+						</label>
+					</div>
+					<button type="submit" class="btn btn-primary send-button">Verzenden</button>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
+{% endblock body %}
+
+{% block javascripts %}
+<script>
+		// Initialize and add the map
+		function initMap() {
+			// The location of Uluru
+			var center = { lat: 52.040023, lng: 4.705377 };
+			var uluru = { lat: 52.039727, lng: 4.717090 };
+			// The map, centered at Uluru
+			var map = new google.maps.Map(document.getElementById('map'),
+				{
+					zoom: 15,
+					center: uluru,
+					disableDefaultUI: true,
+					zoomControl: true,
+					scaleControl: false
+				});
+			// The marker, positioned at Uluru
+			var image = new google.maps.MarkerImage(
+				"./images/marker.png",
+				new google.maps.Size(40, 60),
+				new google.maps.Point(0, 0),
+				new google.maps.Point(17, 34),
+				new google.maps.Size(40, 60)
+			);
+
+			var marker = new google.maps.Marker({
+				position: uluru,
+				map: map,
+				icon: image,
+				animation: google.maps.Animation.DROP,
+			});
+		}
+	</script>
+	<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDsR438xUaitNnO_6K8rTZKd7pPQFTAmEk&callback=initMap">
+	</script>
+{% endblock javascripts %}
