@@ -1,0 +1,64 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href={{ asset('css/general.css') }} />
+    <link rel="stylesheet" href={{ asset('css/navbar.css') }} />
+    <link rel="stylesheet" href={{ asset('css/homepage.css') }} />
+    <link href="https://cdn.rawgit.com/sachinchoolur/lightgallery.js/master/dist/css/lightgallery.css" rel="stylesheet">
+    <link rel="stylesheet" href={{ asset('css/lightgallery.css') }} />
+{% endblock stylesheets %}
+
+{% block title %}{{pageTitle}}{% endblock title %}
+
+{% block body %}
+    <hr class="nav-seperator">
+
+    <!-- JUMBOTRON -->
+    <div class="jumbotron jumbotron-fluid align-center transparent white padding-bottom-15 reduced-jumbotron">
+        <div class="container">
+        <h2>{{pageHeader}}</h2>
+        </div>
+    </div>
+    <!-- END JUMBOTRON -->
+
+    <!-- content -->
+        <div class="container content">
+            <div class="row">
+                <div class="col-xs-12 offset-xs-0 col-md-10 offset-md-1">
+                    {{fullContent|markdown}}
+                </div>
+            </div>
+        </div>
+    <!-- end content -->
+
+    <!-- foto gallery content -->
+    <div class="container-fluid">
+        <div id='lightgallery' class="row">
+            {% for foto in fotos %}
+                <div class="col-xs-12 col-sm-6 col-md-4 gallery-col py-1 px-1" data-src={{foto.file.url}} data-sub-html="<h4>Fading Light</h4><p>Classic view from Rigwood Jetty on Coniston Water an old archive shot similar to an old post but a little later on.</p>" data-pinterest-text="Pin it1" data-tweet-text="share on twitter 1">
+                    <a href="">
+                        <img class="img-responsive w-100" src={{foto.file.url}} alt="Thumb-1">
+                    </a>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+    <!-- end fluid content -->
+{% endblock body %}
+
+{% block javascripts %}
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/picturefill/2.3.1/picturefill.min.js"></script>
+    <script src="https://cdn.rawgit.com/sachinchoolur/lightgallery.js/master/dist/js/lightgallery.js"></script>
+    <script src="https://cdn.rawgit.com/sachinchoolur/lg-pager.js/master/dist/lg-pager.js"></script>
+    <script src="https://cdn.rawgit.com/sachinchoolur/lg-autoplay.js/master/dist/lg-autoplay.js"></script>
+    <script src="https://cdn.rawgit.com/sachinchoolur/lg-fullscreen.js/master/dist/lg-fullscreen.js"></script>
+    <script src="https://cdn.rawgit.com/sachinchoolur/lg-zoom.js/master/dist/lg-zoom.js"></script>
+    <script src="https://cdn.rawgit.com/sachinchoolur/lg-hash.js/master/dist/lg-hash.js"></script>
+    <script src="https://cdn.rawgit.com/sachinchoolur/lg-share.js/master/dist/lg-share.js"></script>
+    <script>
+        lightGallery(document.getElementById('lightgallery'));
+    </script>  
+{% endblock javascripts %}

@@ -1,0 +1,199 @@
+* {
+    box-sizing: border-box
+}
+
+body {
+    font-family: 'Tajawal', sans-serif;
+    background: #242625;
+    color:white;
+    min-height: 100vh;
+}
+
+a, a:hover, a:focus, a:active {
+    color: white
+}
+
+p:blank {
+    display: none;
+}
+
+.website-url:hover {
+    color: #8CC63F;
+    text-decoration: underline;
+}
+
+.content {
+    margin-bottom: 30px;
+}
+
+.grey-background {
+    background: #242625;
+}
+
+.page-footer {
+    margin-top: 0 !important;
+    color:white;
+}
+
+.lighter-background {
+    background: #313332;
+}
+
+.full-widht { 
+    width:100%;
+}
+
+.align-center {
+    text-align: center;
+}
+
+.align-left {
+    text-align: left;
+}
+
+.align-right {
+    text-align: right;
+}
+
+.transparent {
+    background: transparent;
+}
+
+.padding-bottom-75 {
+    padding-bottom: 75px;
+}
+
+.white {
+    color: white;
+}
+
+.black {
+    color:black;
+}
+
+.no-padding {
+    padding: 0;
+}
+
+.no-padding-left {
+    padding-left: 0;
+}
+
+.no-padding-right {
+    padding-right: 0;
+}
+
+.groenregie-button {
+    border-color: #8CC63F;
+    border-radius: 0;
+}
+
+.groenregie-button:hover {
+    border-color: #8CC63F;
+    background: #8CC63F;
+    color: white;
+}
+
+.groenregie-green {
+    color: #8CC63F;
+}
+
+.groenregie-green-background {
+    background-color: #8CC63F;
+}
+
+.seperator {
+    margin-top: 70px;
+}
+
+.icons {
+    font-size: 30px;
+    margin-left: 15px;
+}
+
+.social-row {
+    padding-top: 1em;
+    padding-bottom: 1em;
+}
+
+.nav-seperator {
+    display: block;
+    height: 2px;
+    border: 0;
+    border-top: 1px solid #313332;
+    margin: 0;
+    padding: 0; 
+}
+
+.hr-green {
+    display: block;
+    height: 2px;
+    border: 0;
+    border-top: 1px solid #8CC63F;
+    padding: 0; 
+}
+
+.reduced-jumbotron {
+    margin-bottom: 0;
+    padding: 2rem 1rem;
+}
+
+.page-image{
+    margin-top: 32px;
+}
+
+.paragraph {
+    margin-top: 25px;
+}
+
+.summing {
+    text-align: center;
+}
+
+.pl-15 {
+    padding-left: 15px;
+}
+
+.pr-15 {
+    padding-right: 15px;
+}
+
+.send-button {
+    background: #383b3a;
+    border-radius: 0;
+    color: rgb(179, 179, 179);
+    border: none;
+}
+
+.send-button:hover {
+    background: #8CC63F;
+}
+
+.quote {
+    /*font-family: 'Shadows Into Light', cursive;*/
+    font-family: 'Indie Flower', cursive;
+}
+
+.form-check-input {
+    margin-left: 0;
+}
+
+.form-check-label {
+    padding-left: 1.25rem;
+}
+
+.top-foto {
+    margin-bottom: 40px;
+}
+
+.back-button {
+    margin-top: 40px;
+}
+
+@media (max-width: 850px) {
+    .mobile-100 {
+        width:100%;
+        flex-direction: row !important;
+        flex-wrap: wrap;
+    }
+}

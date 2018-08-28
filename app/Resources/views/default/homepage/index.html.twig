@@ -1,0 +1,66 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href={{ asset('css/general.css') }} />
+    <link rel="stylesheet" href={{ asset('css/navbar.css') }} />
+    <link rel="stylesheet" href={{ asset('css/homepage.css') }} />
+{% endblock stylesheets %}
+
+{% block title %}{{pageTitle}}{% endblock title %}
+
+{% block body %}
+	<!-- CAROUSEL -->
+	<!-- <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" data-interval="20000">
+    <div class="carousel-inner">
+      <div class="carousel-item active videocontainer">
+        <video id="entry-video" autoplay muted loop>
+          <source src="./video/entry.mp4" type="video/mp4"> Your browser does not support the video tag.
+        </video>
+      </div>
+    </div>
+  </div> -->
+	<div class="slideshow">
+		<div class="slider">
+			{% for image in slideshowFotos %}
+					<div class="item">
+							<img src={{image.file.url}} }} title={{image.title}} alt={{image.title}} />
+					</div>
+			{% endfor %}
+		</div>
+	</div>
+	<!-- END CAROUSEL -->
+
+	<!-- welcome text -->
+	<div style="justify-content: center; width: 100%">
+		<div class="jumbotron jumbotron-fluid white homepage-welcome-text card">
+			<div class="container">
+				<h2 class="welcome-text">Welkom bij <span class="groenregie-green">Groen</span>regie</h2>
+				<hr class="hr-green accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+			</div>
+		</div>
+	</div>
+	<!-- end welcome text -->
+{% endblock body %}
+
+{% block javascripts %}
+	<!-- <script>
+		document.getElementById('entry-video').play();
+	</script> -->
+	<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
+	<script type="text/javascript">
+		$(document).ready(function () {
+			$('.slider').slick({
+				draggable: false,
+				arrows: false,
+				dots: false,
+				fade: true,
+				speed: 2000,
+				infinite: true,
+				cssEase: 'cubic-bezier(0.7, 0, 0.3, 1)',
+				autoplay: true,
+				autoplaySpeed: 1500
+			})
+		});
+	</script>
+{% endblock javascripts %}

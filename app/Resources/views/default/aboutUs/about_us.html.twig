@@ -1,0 +1,52 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+  <link rel="stylesheet" href="./css/general.css" />
+  <link rel="stylesheet" href="./css/navbar.css" />
+  <link rel="stylesheet" href="./css/homepage.css" />
+  <link rel="stylesheet" href="./css/about-us.css" />
+  <link href="https://fonts.googleapis.com/css?family=Shadows+Into+Light" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
+{% endblock stylesheets %}
+
+{% block title %}{{pageTitle}}{% endblock title %}
+
+{% block body %}
+<hr class="nav-seperator">
+
+  <!-- JUMBOTRON -->
+  <div class="jumbotron jumbotron-fluid align-center transparent white padding-bottom-15 reduced-jumbotron">
+    <div class="container">
+      <h2>{{pageHeader}}</h2>
+    </div>
+  </div>
+  <!-- END JUMBOTRON -->
+
+  <!-- content -->
+  <div class="container content">
+    <div class="row">
+      <div class="col-xs-12 offset-xs-0 col-md-10 offset-md-1">
+        {{content|markdown}}
+        <p class="quote">
+          {{contentAuthor}}
+        </p>
+      </div>
+    </div>
+
+    <div class="row about-us-image-quote">
+      <div class="about-us-image">
+        <img src="./images/John_Zoete.jpg" width="250">
+      </div>
+      <div class="about-us-quote align-self-center">
+        <span class="quote">"{{quote}}"</span>
+        <br>
+        <span class="quote">{{quoteAuthor}}</span>
+      </div>
+    </div>
+  </div>
+  <!-- end content -->
+{% endblock body %}
+
+{% block javascripts %}
+
+{% endblock javascripts %}

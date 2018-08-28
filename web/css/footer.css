@@ -1,0 +1,29 @@
+footer {
+    color: #A8A39E;
+    border-top: 1px solid #A8A39E;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    font-size: .8rem;
+    margin-top: 80px;
+}
+
+i {
+    margin-left: 10px;
+    font-size: 1rem;
+}
+
+footer span {
+    margin-left: 10px;
+}
+
+.fb-color {
+    color: #3b5998;
+}
+
+.insta-color {
+    color: #e95950;
+}
+
+.lin-color {
+    color: #0077B5;
+}

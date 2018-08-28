@@ -1,0 +1,11 @@
+.about-us-image-quote {
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+.about-us-quote {
+    width: 230px;
+    padding-left: 20px;
+    padding-right: 20px;
+}

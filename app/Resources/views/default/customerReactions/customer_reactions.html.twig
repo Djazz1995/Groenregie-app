@@ -1,0 +1,50 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href={{ asset('css/general.css') }} />
+    <link rel="stylesheet" href={{ asset('css/navbar.css') }} />
+    <link rel="stylesheet" href={{ asset('css/homepage.css') }} />
+    <link rel="stylesheet" href={{ asset('css/our-partner.css') }} />
+{% endblock stylesheets %}
+
+{% block title %}{{pageTitle}}{% endblock title %}
+
+{% block body %}
+    <div class="nav-seperator"></div>
+    <!-- JUMBOTRON -->
+      <div class="jumbotron jumbotron-fluid align-center transparent white padding-bottom-15 reduced-jumbotron">
+        <div class="container">
+          <h2>{{pageHeader}}</h2>
+          <p class="lead">
+            {{pageSubHeader}}
+          </p>
+        </div>
+      </div>
+      <!-- END JUMBOTRON -->
+
+    <!-- container content -->
+      <div class="container content">
+      {% for reaction in customerReactions %}
+        <div class="row our-partner-media">
+          <div class="col-md-4 col-sm-12">
+            <img class="mr-0" src={{reaction.thumbnail.file.url}} alt={{reaction.thumbnail.title}} title={{reaction.thumbnail.title}}>
+          </div>
+          <div class="col-md-8 col-sm-12">
+            <h3 class="mt-2 our-partner-h">{{reaction.naam}}</h3>
+            {{reaction.korteText|markdown}}
+            <p class="quote">
+              {{reaction.auteur}}
+            </p>
+            <p>
+              <a href={{path('customer_reaction_specific', {'name': reaction.urlNaam, 'id': reaction.id})}} class="btn btn-outline-primary float-right groenregie-green groenregie-button more-info">lees meer</a>
+            </p>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+      <!-- end fluid content -->
+{% endblock body %}
+
+{% block javascripts %}
+
+{% endblock javascripts %}
