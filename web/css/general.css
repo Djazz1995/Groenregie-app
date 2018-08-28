@@ -6,6 +6,7 @@ body {
     font-family: 'Tajawal', sans-serif;
     background: #242625;
     color:white;
+    min-height: 100vh;
 }
 
 a, a:hover, a:focus, a:active {
