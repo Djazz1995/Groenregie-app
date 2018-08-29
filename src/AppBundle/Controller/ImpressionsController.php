@@ -34,21 +34,13 @@ class ImpressionsController extends Controller
     /**
      * @Route("/impressies/{name}/{id}", name="impression_specific")
      */
-    public function impressionAction(Request $request, $name, $id, LoggerInterface $logger)
+    public function impressionAction(Request $request, $name, $id)
     {
-        try{
         $client = new \Contentful\Delivery\Client('4113452de26e27759b744718344945d5afc601e64e217688758dbfd649076208', 'jjzsv0091dq4', 'master');
 
         $entry = $client->getEntry($id); // Dit id komt uit Contentful -> Content -> klantreactie-> entry ID
-        } catch (\Exception $e) {
-            $logger->info($e->getMessage());
-            return;
-        }
-
-
-        // replace this example code with whatever you need
+        
         return $this->render('default/impressions/impressions_specific.html.twig', [
-            'base_dir' => realpath($this->getParameter('kernel.project_dir')).DIRECTORY_SEPARATOR,
             'pageTitle' => $entry->getTitel(),
             'pageHeader' => $entry->getTitel(),
             'thumbnail' => $entry->getThumbnail(),
