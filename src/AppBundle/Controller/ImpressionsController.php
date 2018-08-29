@@ -38,16 +38,17 @@ class ImpressionsController extends Controller
     {
         $client = new \Contentful\Delivery\Client('4113452de26e27759b744718344945d5afc601e64e217688758dbfd649076208', 'jjzsv0091dq4', 'master');
 
-        $entry = $client->getEntry('2ALaP9YK7CYWscGa2EMoSm'); // Dit id komt uit Contentful -> Content -> klantreactie-> entry ID
+        // $entry = $client->getEntry($id); // Dit id komt uit Contentful -> Content -> klantreactie-> entry ID
+        
+        // return $this->render('default/impressions/impressions_specific.html.twig', [
+        //     'base_dir' => realpath($this->getParameter('kernel.project_dir')).DIRECTORY_SEPARATOR,
+        //     'pageTitle' => $entry->getTitel(),
+        //     'pageHeader' => $entry->getTitel(),
+        //     'thumbnail' => $entry->getThumbnail(),
+        //     'fullContent' => $entry->getVolleText(),
+        //     'fotos' => $entry->getFotos()
+        // ]);
 
-        // replace this example code with whatever you need
-        return $this->render('default/impressions/impressions_specific.html.twig', [
-            'base_dir' => realpath($this->getParameter('kernel.project_dir')).DIRECTORY_SEPARATOR,
-            'pageTitle' => $entry->getTitel(),
-            'pageHeader' => $entry->getTitel(),
-            'thumbnail' => $entry->getThumbnail(),
-            'fullContent' => $entry->getVolleText(),
-            'fotos' => $entry->getFotos()
-        ]);
+        return $this->render('base.html.twig');
     }
 }
