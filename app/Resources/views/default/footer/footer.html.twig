@@ -2,7 +2,7 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col d-flex">
-                <div class="d-flex">
+                <div class="d-flex flex-wrap">
                 {% if fbUrl is not null %}    
                     <a href={{fbUrl}}><i class="fab fa-facebook-f fb-color"></i></a>
                 {% endif %}
@@ -13,7 +13,7 @@
                     <a href={{linUrl}}><i class="fab fa-linkedin-in lin-color"></i></a>
                 {% endif %}
                 </div>
-                <div class="d-flex">
+                <div class="d-flex flex-wrap">
                     <span class='d-block align-self-center'>{{companyName}} © 2018</span>
                     <span>|</span>
                     <span>{{address}} {{zipcode}} {{city}}</span>
