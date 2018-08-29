@@ -1,5 +1,6 @@
 .navbar {
     background: #242625 !important;
+    z-index: 99;
 }
 
 .navbar-collapse {
