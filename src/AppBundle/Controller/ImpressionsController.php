@@ -40,7 +40,7 @@ class ImpressionsController extends Controller
 
         $entry = $client->getEntry($id); // Dit id komt uit Contentful -> Content -> klantreactie-> entry ID
         
-        return $this->render('default/impressions/impressions_specific.html.twig', [
+        return $this->render('default/impressions/Impressions_specific.html.twig', [
             'pageTitle' => $entry->getTitel(),
             'pageHeader' => $entry->getTitel(),
             'thumbnail' => $entry->getThumbnail(),
