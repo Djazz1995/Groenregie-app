@@ -6,11 +6,19 @@ body {
     font-family: 'Tajawal', sans-serif;
     background: #242625;
     color:white;
-    min-height: 100vh;
+    min-height: 600px;
 }
 
 a, a:hover, a:focus, a:active {
     color: white
+}
+
+.blue-link {
+    color: rgb(0, 130, 200);
+}
+
+.blue-link:hover {
+    color: rgb(0, 130, 200);;
 }
 
 p:blank {

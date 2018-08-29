@@ -29,37 +29,66 @@
 			</div>
 			<div class="contact-form col-xs-12 col-md-7">
 				<h4>Contactformulier</h4>
-				<form>
+				{{form_errors(form)}}
+				<form action={{path('contact')}} method="POST">
+					{% for message in app.flashes('reCAPTCHA') %}
+						<div class="alert alert-danger" role="alert">
+							{{ message }}
+						</div>
+					{% endfor %}
+					{% for message in app.flashes('sendSuccess') %}
+						<div class="alert alert-success" role="alert">
+							{{ message }}
+						</div>
+					{% endfor %}
 					<div class="form-group">
 						<label for="exampleInputEmail1">Uw naam*</label>
-						<input type="text" name="name" class="form-control" placeholder="Naam">
+						{# <input type="text" name="name" class="form-control" placeholder="Naam" required> #}
+						{{ form_widget(form.name, { 'attr': {'class': 'form-control'} }) }}
+						{{ form_errors(form.name) }}
 					</div>
 					<div class="form-group">
 						<label for="exampleInputEmail1">E-mailadres*</label>
-						<input type="email" class="form-control" name="email" placeholder="Enter email">
+						{# <input type="email" class="form-control" name="email" placeholder="Enter email" required> #}
+						{{ form_widget(form.email, { 'attr': {'class': 'form-control'} }) }}
+						{{ form_errors(form.email) }}
 					</div>
 					<div class="form-group">
 						<label for="exampleInputPassword1">Telefoonnummer*</label>
-						<input type="password" class="form-control" name="phonenumber" placeholder="telefoonnummer">
+						{# <input type="text" class="form-control" name="phonenumber" placeholder="telefoonnummer" required> #}
+						{{ form_widget(form.phoneNumber, { 'attr': {'class': 'form-control'} }) }}
+						{{ form_errors(form.phoneNumber) }}
 					</div>
 					<div class="form-group">
 						<label for="exampleInputPassword1">Plaats*</label>
-						<input type="password" class="form-control" name="place" placeholder="Plaats">
+						{# <input type="text" class="form-control" name="place" placeholder="Plaats" required> #}
+						{{ form_widget(form.city, { 'attr': {'class': 'form-control'} }) }}
+						{{ form_errors(form.city) }}
 					</div>
 					<div class="form-group">
 						<label for="exampleInputPassword1">Onderwerp*</label>
-						<input type="password" class="form-control" name="subject" placeholder="Onderwerp">
+						{# <input type="text" class="form-control" name="subject" placeholder="Onderwerp" required> #}
+						{{ form_widget(form.subject, { 'attr': {'class': 'form-control'} }) }}
+						{{ form_errors(form.subject) }}
 					</div>
 					<div class="form-group">
 						<label for="exampleFormControlTextarea1">Bericht*</label>
-						<textarea class="form-control" name="message" rows="3"></textarea>
+						{# <textarea class="form-control" name="message" rows="3" required></textarea> #}
+						{{ form_widget(form.message, { 'attr': {'class': 'form-control', 'rows': '3'} }) }}
+						{{ form_errors(form.message) }}
 					</div>
 					<div class="form-group">
-						<input type="checkbox" class="form-check-input" id="exampleCheck1">
+						{# <input type="checkbox" class="form-check-input" id="exampleCheck1" required> #}
+						{{ form_widget(form.checkbox, { 'attr': {'class': 'form-check-input', 'id': 'exampleCheck1'} }) }}
 						<label class="form-check-label" for="exampleCheck1">
-							Ja, ik neem kennis van de privacy statement en door het formulier in te vullen ga ik daarmee akkoord.
+							Ja, ik neem kennis van de <a href={{path('privacy_declaration')}} class="blue-link">privacy statement</a> en door het formulier in te vullen ga ik daarmee akkoord.
 						</label>
+						{{ form_errors(form.checkbox) }}
 					</div>
+					<div class="form-group">
+						<div class="g-recaptcha" data-sitekey="6Lco72wUAAAAACFvn_Wsj6crBIdhOowz69LLznEa"></div>
+					</div>
+					{{ form_row(form._token) }}
 					<button type="submit" class="btn btn-primary send-button">Verzenden</button>
 				</form>
 			</div>
@@ -69,6 +98,7 @@
 {% endblock body %}
 
 {% block javascripts %}
+<script src='https://www.google.com/recaptcha/api.js'></script>
 <script>
 		// Initialize and add the map
 		function initMap() {
