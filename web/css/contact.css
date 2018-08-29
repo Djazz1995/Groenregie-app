@@ -56,10 +56,21 @@
     background-color: #383b3a;
     border: none;
     border-radius: 0;
+    color: #9ca5ad;
 }
 
 .form-control::placeholder {
     color: rgb(179, 179, 179);
+}
+
+.form-group ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.form-group ul li {
+    padding-top: 5px;
+    color: red;
 }
 
 @media (max-width: 850px) {
