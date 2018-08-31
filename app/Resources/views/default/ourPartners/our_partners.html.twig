@@ -15,9 +15,11 @@
     <div class="jumbotron jumbotron-fluid align-center transparent white padding-bottom-15 reduced-jumbotron">
         <div class="container">
             <h2>{{pageHeader}}</h2>
+            {% if pageHeader is not null %}
             <p class="lead">
                 {{pageSubHeader}}       
             </p> 
+            {% endif %}
         </div>
     </div>
     <!-- END JUMBOTRON -->
