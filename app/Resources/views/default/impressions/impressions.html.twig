@@ -16,10 +16,12 @@
 	<!-- JUMBOTRON -->
 	<div class="jumbotron jumbotron-fluid align-center transparent white padding-bottom-15 reduced-jumbotron">
 		<div class="container">
-			<h2>Impressies</h2>
+			<h2>{{pageHeader}}</h2>
+			{% if pageHeader is not null %}
 			<p class="lead">
-				Een overzicht van onze uitgevoerde projecten.
+				{{pageSubHeader}}
 			</p>
+			{% endif %}
 		</div>
 	</div>
 	<!-- END JUMBOTRON -->
