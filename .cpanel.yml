@@ -1,4 +1,4 @@
 deployment:
   tasks:
-    - export DEPLOYPATH=/home/groenregie/groenregieapp/
+    - export DEPLOYPATH=/home/groenregie/dev.groenregie.nl/
     - composer install --no-dev --optimize-autoloader $DEPLOYPATH
