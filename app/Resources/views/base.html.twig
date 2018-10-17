@@ -70,7 +70,6 @@
         </nav>
         <!-- END NAVBAR -->
         {% block body %}{% endblock %}
-
         {% if footer is not defined or footer == true %}
             {{ render(controller(
                 'AppBundle\\Controller\\FooterController::getFooterAction'
