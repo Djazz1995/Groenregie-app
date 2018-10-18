@@ -126,47 +126,8 @@
         animation-name: none;
     }
  }
-
- /* SLICK SLIDESHOW */
- 	.slideshow {
-		position: relative;
-		z-index: 1;
-		height: 100vh;
-	}
-
-	.slideshow * {
-		outline: none;
-	}
-
-	.slideshow .slider {
-		box-shadow: 0 20px 50px -25px rgba(0, 0, 0, 1);
-	}
-
-	.slideshow .slider-track {
-		transition: all 4s cubic-bezier(0.7, 0, 0.3, 1);
-	}
-
-	.slideshow .item {
-		height: 100%;
-		position: relative;
-		z-index: 1;
-	}
-
-	.slideshow .item img {
-		height: 100vh;
-		transition: all 4s cubic-bezier(0.7, 0, 0.3, 1);
-		transform: scale(1.5);
-	}
-
-	.slideshow .item.slick-active img {
-		transform: scale(1);
-    }
     
-    /* NEW */
-
-    /**
- * See: http://www.css-101.org/articles/ken-burns_effect/css-transition.php
- */
+/* NEW */
 
 /**
  * Styling the container (the wrapper)
