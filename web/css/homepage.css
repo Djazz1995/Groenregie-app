@@ -153,19 +153,21 @@
 
 #slideshow img {
     position:absolute;
-    width:100%;
+    resize: none;
+    bottom: 0;
+    width: 100vw;
     height:100vh;
     opacity:0;
     -webkit-transition-property: opacity, -webkit-transform;
-    -webkit-transition-duration: 2.25s, 20s;
+    -webkit-transition-duration: 2.25s, 40s;
        -moz-transition-property: opacity, -moz-transform;
-       -moz-transition-duration: 2.25s, 20s;
+       -moz-transition-duration: 2.25s, 40s;
         -ms-transition-property: opacity, -ms-transform;
-        -ms-transition-duration: 2.25s, 20s;
+        -ms-transition-duration: 2.25s, 40s;
          -o-transition-property: opacity, -o-transform;
-         -o-transition-duration: 2.25s, 20s;
+         -o-transition-duration: 2.25s, 40s;
             transition-property: opacity, transform;
-            transition-duration: 2.25s, 20s;
+            transition-duration: 2.25s, 40s;
 }
 
 /**
