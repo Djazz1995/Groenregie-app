@@ -74,7 +74,7 @@
 					<div class="form-group">
 						{{ form_widget(form.checkbox, { 'attr': {'class': 'form-check-input', 'id': 'exampleCheck1'} }) }}
 						<label class="form-check-label" for="privacy-agree">
-							Ja, ik neem kennis van de <a href={{path('privacy_declaration')}} class="blue-link">privacy statement</a> en door het formulier in te vullen ga ik daarmee akkoord.
+							Ja, ik neem kennis van de <a target="_blank" href={{path('privacy_declaration')}} class="blue-link">privacy statement</a> en door het formulier in te vullen ga ik daarmee akkoord.
 						</label>
 						{{ form_errors(form.checkbox) }}
 					</div>

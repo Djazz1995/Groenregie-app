@@ -39,8 +39,6 @@ class ContactController extends Controller
             $form->handleRequest($request);
 
             if ($form->isSubmitted() && $form->isValid() && $this->captchaverify($request->get('g-recaptcha-response'))) {
-                // $form->getData() holds the submitted values
-                // but, the original `$task` variable has also been updated
                 $contactForm = $form->getData();
 
                 $message = (new \Swift_Message($contactForm->getSubject()))
@@ -49,7 +47,6 @@ class ContactController extends Controller
                     ->setSubject($contactForm->getSubject())
                     ->setBody(
                         $this->renderView(
-                            // app/Resources/views/Emails/mail.html.twig
                             'Emails/mail.html.twig',
                             [
                                 'name' => $contactForm->getName(),
@@ -68,7 +65,7 @@ class ContactController extends Controller
 
                     $this->addFlash(
                         'sendSuccess',
-                        'Uw bericht is verzonden.'
+                        'Uw bericht is verzonden. We nemen zo snel mogelijk contact met u op.'
                     );  
 
                     return $this->redirectToRoute('contact');

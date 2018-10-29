@@ -10,25 +10,6 @@
 {% block title %}{{pageTitle}}{% endblock title %}
 
 {% block body %}
-    <hr class="nav-seperator">
-
-    <!-- JUMBOTRON -->
-    <div class="jumbotron jumbotron-fluid align-center transparent white padding-bottom-15 reduced-jumbotron">
-        <div class="container">
-        <h2>{{pageTitle}}</h2>
-        </div>
-    </div>
-    <!-- END JUMBOTRON -->
-
-    <!-- content -->
-    <div class="container content">
-        <div class="row">
-            <div class="col-xs-12 offset-xs-0 col-md-10 offset-md-1">
-                {{fullContent|markdown}}
-            </div>
-        </div>
-    </div>
-    <!-- end content -->
 {% endblock body %}
 
 {% block javascripts %}

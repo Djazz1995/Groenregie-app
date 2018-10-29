@@ -17,12 +17,7 @@ class LegalController extends Controller
 
         $entry = $client->getEntry('1jBtmhLUYGiYskQEKEM8cg');
 
-        // replace this example code with whatever you need
-        return $this->render('default/legal/declaration.html.twig', [
-            'base_dir' => realpath($this->getParameter('kernel.project_dir')).DIRECTORY_SEPARATOR,
-            'pageTitle' => $entry->getPaginaTitel(),
-            'fullContent' => $entry->getInhoud(),
-        ]);
+        return $this->redirect($entry->getPrivacyPdf()->getFile()->getUrl());
     }
 
     /**

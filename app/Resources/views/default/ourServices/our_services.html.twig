@@ -17,34 +17,23 @@
             </div>
             <div class="row">
                 <div class="col-lg paragraph"> 
-                    <h4>Ontwerp</h4>
+                    <h4>{{ontwerpTitle}}</h4>
                     <p>
-                        Groenregie brengt de beste partijen samen. Dit geldt zeker ook voor de eerste stap; een professioneel tuinontwerp.
-                        We werken samen met een team van zeer vakkundige en gerenommeerde tuinontwerpers. Tijdens een eerste 
-                        vrijblijvende afspraak bespreken we de mogelijkheden met u, en in overleg selecteren we de juiste partij.
-                        Hierbij is het belangrijkste dat deze ontwerper het beste in staat is uw persoonlijke wensen in het eindresultaat te verwerken.
+                        {{ontwerp|markdown}}
                     </p>
                 </div>
 
                 <div class="col-lg paragraph"> 
-                    <h4>Aanleg</h4>
+                    <h4>{{aanlegTitle}}</h4>
                     <p>
-                        Groenregie stelt voor u een duidelijke offerte op met een uiterst scherpe prijsstelling. Bij het tot stand 
-                        komen van een opdracht werken wij met heldere afspraken in een opdrachtbevestiging.
-                        Voor de uitvoering beschikken wij over ons team van 22 vakmensen die uw eisen en wensen kunnen vertalen 
-                        in een buitenruimte die bij u past. Van grondwerk en straatwerk tot beplantingswerkzaamheden. Maar ook aparte onderdelen als gestuukte tuinmuren, speciale metaal- of houtwerkzaamheden, verlichtingssystemen, zwembaden, waterpartijen en tuinberegening. Kortom, alles is mogelijk.                           
-                        Na aanleg zal Groenregie voor u de nazorg leveren, waarbij het gerealiseerde project zich kan ontwikkelen 
-                        tot het beoogde eindresultaat.
+                        {{aanleg|markdown}}
                     </p>
                 </div>
 
                 <div class="col-lg paragraph"> 
-                    <h4>Onderhoud</h4>
+                    <h4>{{onderhoudTitle}}</h4>
                     <p>
-                        Na de aanleg verzorgt Groenregie desgewenst het jaarlijkse of periodieke onderhoud van uw tuin. 
-                        Daarvoor zijn diverse mogelijkheden. In overleg wordt een keuze gemaakt.  
-                        Uitgangspunt is steeds dat de tuin door vakkundig onderhoud zich op de gewenste manier naar een 
-                        hoger niveau ontwikkelt.
+                        {{onderhoud|markdown}}
                     </p>
                 </div>
 
@@ -54,21 +43,4 @@
 {% endblock body %}
 
 {% block javascripts %}
-	<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
-
-	<script type="text/javascript">
-		$(document).ready(function () {
-			$('.slider').slick({
-				draggable: false,
-				arrows: false,
-				dots: false,
-				fade: true,
-				speed: 2000,
-				infinite: true,
-				cssEase: 'cubic-bezier(0.7, 0, 0.3, 1)',
-				autoplay: true,
-				autoplaySpeed: 1500
-			})
-		});
-	</script>
 {% endblock javascripts %}

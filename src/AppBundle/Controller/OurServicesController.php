@@ -22,7 +22,13 @@ class OurServicesController extends Controller
         return $this->render('default/ourServices/our_services.html.twig', [
             'base_dir' => realpath($this->getParameter('kernel.project_dir')).DIRECTORY_SEPARATOR,
             'pageTitle' => $entry->getPaginaTitel(),
-            'foto' => $entry->getFoto()
+            'foto' => $entry->getFoto(),
+            'ontwerpTitle' => $entry->getOntwerpTitel(),
+            'aanlegTitle' => $entry->getAanlegTitel(),
+            'onderhoudTitle' => $entry->getOnderhoudTitel(),
+            'ontwerp' => $entry->getOntwerp(),
+            'aanleg' => $entry->getAanleg(),
+            'onderhoud' => $entry->getOnderhoud()
         ]);
     }
 }

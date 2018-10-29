@@ -177,8 +177,8 @@ p:blank {
 }
 
 .quote {
-    /*font-family: 'Shadows Into Light', cursive;*/
-    font-family: 'Indie Flower', cursive;
+    font-family: 'Caveat', cursive;
+    font-size: 1.5rem;
 }
 
 .form-check-input {
