@@ -1,10 +1,15 @@
 footer {
+    position: fixed;
+    bottom: 0;
+    left:0;
+    right:0;
     color: #A8A39E;
     border-top: 1px solid #A8A39E;
     padding-top: 5px;
     padding-bottom: 5px;
     font-size: .8rem;
-    margin-top: 80px;
+    background: #242625;
+    z-index: 100;
 }
 
 i {
@@ -27,3 +32,19 @@ footer span {
 .lin-color {
     color: #0077B5;
 }
+
+@media (max-width: 575px) { }
+
+/* Medium devices (tablets, 768px and up) */
+@media (max-width: 767px) {
+    footer {
+        position: fixed;
+        bottom: 0;
+    }
+ }
+
+/* Large devices (desktops, 992px and up) */
+@media (max-width: 991px) { }
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (max-width: 1199px) { }

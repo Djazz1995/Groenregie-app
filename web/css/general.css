@@ -12,12 +12,12 @@ a, a:hover, a:focus, a:active {
     color: white
 }
 
-.blue-link {
-    color: rgb(0, 130, 200);
+.green-link {
+    color: #8CC63F;
 }
 
-.blue-link:hover {
-    color: rgb(0, 130, 200);;
+.green-link:hover {
+    color: #8CC63F;
 }
 
 p:blank {
@@ -71,7 +71,7 @@ p:blank {
 }
 
 .white {
-    color: white;
+    color: white !important;
 }
 
 .black {
@@ -197,10 +197,109 @@ p:blank {
     margin-top: 40px;
 }
 
-@media (max-width: 850px) {
+.minh-vh {
+    min-height: 100vh;
+}
+
+.justify-content-center {
+    justify-content: center;
+}
+
+.full-page-background {
+  background: url('../images/natural-garden.jpg') no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  -o-background-size: cover;
+  position: fixed;
+  top:0;
+  left: 0;
+  right: 0;
+  height: 100vh
+}
+
+.full-page-background:before {
+    position: fixed;
+    content: '';
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-image: linear-gradient(to bottom right,#000,#000);
+    opacity: .85; 
+    z-index: 1;
+}
+
+.green-outline {
+    border-top: 1px solid #8CC63F;
+    border-bottom: 1px solid #8CC63F;
+    padding-top: 1rem !important;
+}
+
+.floating-text-left {
+    z-index: 99;
+    margin-top: 8rem!important;
+}
+
+.floating-image-right {
+    z-index: 99;
+    margin-top: 12rem!important;
+    text-align: right;
+}
+
+.floating-quote {
+    margin-top: 17rem!important;
+    z-index: 99;
+    margin-bottom: 5rem;
+}
+
+.pb-full-page {
+    margin-bottom: 7rem!important;
+}
+
+.flex-wrap-wrap {
+    flex-wrap: wrap;
+}
+
+/* Medium devices (tablets, 768px and down) */
+@media (max-width: 991px) { 
+    .floating-image-right {
+        text-align: center;
+    }
+
+    .floating-quote {
+        margin-top: 1rem!important;
+        text-align: center;
+    }
+}
+
+@media (max-width: 767px) {
     .mobile-100 {
         width:100%;
         flex-direction: row !important;
         flex-wrap: wrap;
     }
+
+    .floating-text-left {
+    margin-top: 1rem!important;
+    }
+
+    .floating-image-right {
+        margin-top: 1rem!important;
+    }
+
+    .floating-quote {
+        margin-top: 1rem!important;
+    }
+
+    .pb-full-page {
+        margin-bottom: 1rem!important;
+    }
 }
+
+
+/* Large devices (desktops, 992px and up) */
+@media (max-width: 991px) { ... }
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (max-width: 1199px) { ... } */

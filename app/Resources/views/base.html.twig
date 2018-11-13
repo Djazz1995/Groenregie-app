@@ -21,7 +21,7 @@
 
         <link rel="icon" type="image/png" sizes="96x96" href="https://groenregie.nl/files/icons/favicon-96x96.png">
     </head>
-    <body>
+    <body class="minh-vh">
     	<!-- NAVBAR -->
         {% if navbar is defined and navbar == 'absolute-navbar' %}
             <nav class="navbar navbar-expand-lg navbar-dark bg-dark absolute-navbar">
@@ -45,7 +45,7 @@
                         <a class="nav-link" href={{path('our_services')}}>ons aanbod</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href={{path('impressions')}}>impressies</a>
+                        <a class="nav-link" href={{path('impressions')}}>onze projecten</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href={{path('our_partners')}}>onze partners</a>
@@ -70,6 +70,7 @@
         </nav>
         <!-- END NAVBAR -->
         {% block body %}{% endblock %}
+        
         {% if footer is not defined or footer == true %}
             {{ render(controller(
                 'AppBundle\\Controller\\FooterController::getFooterAction'

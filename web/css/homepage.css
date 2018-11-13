@@ -33,7 +33,6 @@
     text-align: center;
     background: rgba(36, 38, 37, 0.39) !important;
     padding: 2rem 1rem;
-    padding-bottom: 0;
     -webkit-animation-name: welcome-text-animation; /* Safari 4.0 - 8.0 */
     -webkit-animation-duration: 4s; /* Safari 4.0 - 8.0 */
     animation-name: welcome-text-animation;

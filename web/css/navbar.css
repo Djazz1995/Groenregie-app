@@ -1,6 +1,7 @@
 .navbar {
     background: #242625 !important;
     z-index: 99;
+    border-bottom: 1px solid #8CC63F
 }
 
 .navbar-collapse {
@@ -26,6 +27,7 @@
     z-index: 99;
     width: 100%;
     background: rgba(36, 38, 37, 0.39) !important;
+    border-bottom: none;
 }
 
 .dropdown-toggle::after {
@@ -53,4 +55,19 @@
 
 .dropdown-item.active, .dropdown-item:active {
     background: #8CC63F;
+}
+
+.subnav-bar {
+    z-index: 50;
+    border-bottom: none;
+    background: #181a19 !important;
+}
+
+.subnav-bar .nav-link {
+    padding-bottom: 0;
+    padding-top: .2rem;
+}
+
+.subnav-bar .nav-item:hover .navbar-link {
+    color: #8CC63F !important;
 }
