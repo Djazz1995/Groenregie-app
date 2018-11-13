@@ -85,7 +85,7 @@ class AboutUsController extends Controller
         $entry = $client->getEntry('5VFb4Cl4qcYWmwSmmsoAyo'); // Dit id komt uit Contentful -> Content -> Ons aanbod -> entry ID
 
         // replace this example code with whatever you need
-        return $this->render('default/fullPageBackground/left.html.twig', [
+        return $this->render('default/fullPageBackground/right.html.twig', [
             'base_dir' => realpath($this->getParameter('kernel.project_dir')).DIRECTORY_SEPARATOR,
             'pageTitle' => $entry->getPaginaTitel(),
             'pageHeader' => $entry->getOnderhoudTitel(),

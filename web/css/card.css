@@ -1,0 +1,34 @@
+.card {
+    border-radius: none;
+    border: none;
+    height: 75vh;
+    overflow: hidden;
+}
+
+.choose-card-body {
+    position: absolute;
+    top: 92%;
+    background: rgba(0,0,0, .65);
+    width: 100%;
+    min-height: 200px;
+    transition: .65s;
+    height: 100%;
+}
+
+.card:hover {
+    cursor: pointer;
+}
+
+.card:hover .choose-card-body {
+    top: 0;
+    bottom: 0;
+    background: rgba(0,0,0, .95);
+}
+
+.with-background {
+    background: url('../images/natural-garden.jpg') no-repeat center center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+}
