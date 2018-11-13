@@ -25,7 +25,9 @@ class OurPartnersController extends Controller
             'pageTitle' => $entry->getPaginaTitel(),
             'pageHeader' => $entry->getPaginaHeader(),
             'pageSubHeader' => $entry->getPaginaSubHeader(),
-            'partners' => $entry->getPartners()
+            'partners' => $entry->getPartners(),
+            'parentActive' => 'ourPartners',
+            'subActive' => 'none'
         ]);
     }
 
@@ -44,7 +46,9 @@ class OurPartnersController extends Controller
             'pageTitle' => $entry->getNaam(),
             'thumbnail' => $entry->getThumbnail(),
             'fullContent' => $entry->getVolleText(),
-            'website' => $entry->getWebsite()
+            'website' => $entry->getWebsite(),
+            'parentActive' => 'ourPartners',
+            'subActive' => 'none'
         ]);
     }
 }

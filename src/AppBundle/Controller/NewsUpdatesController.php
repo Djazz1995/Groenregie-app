@@ -24,7 +24,9 @@ class NewsUpdatesController extends Controller
             'pageTitle' => $entry->getPaginaTitel(),
             'pageHeader' => $entry->getPaginaHeader(),
             'pageSubHeader' => $entry->getPaginaSubHeader(),
-            'news' => $entry->getNieuwsitems()
+            'news' => $entry->getNieuwsitems(),
+            'parentActive' => 'news',
+            'subActive' => 'none'
         ]);
     }
 
@@ -44,7 +46,9 @@ class NewsUpdatesController extends Controller
             'pageHeader' => $entry->getNaam(),
             'thumbnail' => $entry->getThumbnail(),
             'fullContent' => $entry->getVolleText(),
-            'pdf' => $entry->getPdf()
+            'pdf' => $entry->getPdf(),
+            'parentActive' => 'news',
+            'subActive' => 'none'
         ]);
     }
 }

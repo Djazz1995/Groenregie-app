@@ -24,7 +24,9 @@ class CustomerReactionsController extends Controller
             'pageTitle' => $entry->getPaginaTitel(),
             'pageHeader' => $entry->getPaginaHeader(),
             'pageSubHeader' => $entry->getPaginaSubHeader(),
-            'customerReactions' => $entry->getKlantreacties()
+            'customerReactions' => $entry->getKlantreacties(),
+            'parentActive' => 'customerReactions',
+            'subActive' => 'none'
         ]);
     }
 
@@ -44,7 +46,9 @@ class CustomerReactionsController extends Controller
             'pageHeader' => $entry->getNaam(),
             'thumbnail' => $entry->getThumbnail(),
             'fullContent' => $entry->getVolleText(),
-            'author' => $entry->getAuteur()
+            'author' => $entry->getAuteur(),
+            'parentActive' => 'customerReactions',
+            'subActive' => 'none'
         ]);
     }
 }

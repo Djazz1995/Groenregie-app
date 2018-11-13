@@ -1,0 +1,58 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+  <link rel="stylesheet" href="/css/general.css" />
+  <link rel="stylesheet" href="/css/navbar.css" />
+  <link rel="stylesheet" href="/css/homepage.css" />
+  <link rel="stylesheet" href="/css/about-us.css" />
+  <link href="https://fonts.googleapis.com/css?family=Caveat" rel="stylesheet">
+{% endblock stylesheets %}
+
+{% block title %}{{pageTitle}}{% endblock title %}
+
+{% block body %}
+
+{% include 'default/subNavs/aboutUsSubNav.html.twig' %} {# include full background #}
+
+  {# full page background #}
+  <div class="full-page-background" style="height: 100vh">
+  </div>
+
+  <div class="container-fluid pb-full-page">
+    <div class="row">
+      <div class="offset-xs-1 col-xs-12 offset-md-1 col-md-5  offset-lg-1 col-lg-4 floating-text-left mt-5">
+        <div>
+          <h2>{{pageHeader}}</h2>
+        </div>
+        <div class="green-outline">
+          {{content|markdown}}
+          {% if contentAuthor is defined and contentAuthor is not null %}
+          <p class="quote">
+            {{contentAuthor}}
+          </p>
+          {% endif %}
+        </div>
+      </div>
+      
+      {% if withFoto is defined and withFoto is not null %}
+        <div class="col-xs-12 col-md-6 offset-lg-1 col-lg-5 d-flex justify-content-center row flex-wrap-wrap">
+          <div class="col-xs-12 col-md-12 col-lg-6 floating-image-right ">
+            <img src="./images/John_Zoete.jpg" width="250">
+          </div>
+          <div class="col-xs-12 col-md-12 col-lg-6 floating-quote ">
+            <span class="quote">"{{quote}}"</span>
+            <br>
+            <span class="quote">{{quoteAuthor}}</span>
+          </div>
+        </div>
+      {% endif %}
+
+    </div>
+  </div>
+  {# end full page background #}
+
+{% endblock body %}
+
+{% block javascripts %}
+
+{% endblock javascripts %}

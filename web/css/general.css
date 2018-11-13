@@ -102,7 +102,7 @@ p:blank {
 }
 
 .groenregie-green {
-    color: #8CC63F;
+    color: #8CC63F !important;
 }
 
 .groenregie-green-background {

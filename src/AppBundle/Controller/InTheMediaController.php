@@ -24,7 +24,9 @@ class InTheMediaController extends Controller
             'pageTitle' => $entry->getPaginaTitel(),
             'pageHeader' => $entry->getPaginaHeader(),
             'pageSubHeader' => $entry->getPaginaSubHeader(),
-            'mediaItems' => $entry->getMediaItems()
+            'mediaItems' => $entry->getMediaItems(),
+            'parentActive' => 'inTheMedia',
+            'subActive' => 'none'
         ]);
     }
 
@@ -44,7 +46,9 @@ class InTheMediaController extends Controller
             'pageHeader' => $entry->getNaam(),
             'thumbnail' => $entry->getThumbnail(),
             'fullContent' => $entry->getVolleText(),
-            'pdf' => $entry->getPdf()
+            'pdf' => $entry->getPdf(),
+            'parentActive' => 'inTheMedia',
+            'subActive' => 'none'
         ]);
     }
 }

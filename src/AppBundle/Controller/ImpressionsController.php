@@ -27,7 +27,9 @@ class ImpressionsController extends Controller
             'pageHeader' => $entry->getPaginaHeader(),
             'pageSubHeader' => $entry->getPaginaSubHeader(),
             'modernGardens' => $entry->getModerneTuinen(),
-            'natureGardens' => $entry->getNatuurlijkeTuinen()
+            'natureGardens' => $entry->getNatuurlijkeTuinen(),
+            'parentActive' => 'ourProjects',
+            'subActive' => 'none'
         ]);
     }
 
@@ -45,7 +47,9 @@ class ImpressionsController extends Controller
             'pageHeader' => $entry->getTitel(),
             'thumbnail' => $entry->getThumbnail(),
             'fullContent' => $entry->getVolleText(),
-            'fotos' => $entry->getFotos()
+            'fotos' => $entry->getFotos(),
+            'parentActive' => 'ourProjects',
+            'subActive' => 'none'
         ]);
     }
 }

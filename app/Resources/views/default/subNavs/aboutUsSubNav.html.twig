@@ -1,0 +1,18 @@
+  <nav class="navbar navbar-expand-lg navbar-light bg-light justify-content-center subnav-bar">
+    <div id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto text-center">
+        <li class="nav-item active">
+          <a class="nav-link px-5 {{ subActive == 'vision' ? 'groenregie-green' : 'white' }}" href="{{ path('about_us') }}">Visie</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link px-5 {{ subActive == 'gardenDesign' ? 'groenregie-green' : 'white' }}" href="{{ path('about_us_design') }}">Tuinontwerp</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link px-5 {{ subActive == 'gardenBuild' ? 'groenregie-green' : 'white' }}" href="{{ path('about_us_build') }}">Tuinaanleg</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link px-5 {{ subActive == 'gardenMaintainance' ? 'groenregie-green' : 'white' }}" href="{{ path('about_us_maintain') }}">Tuinonderhoud</a>
+        </li>
+      </ul>
+    </div>
+  </nav>

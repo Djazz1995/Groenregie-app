@@ -99,7 +99,9 @@ class ContactController extends Controller
             'email' => $entry->getEmail(),
             'website' => $entry->getWebsite(),
             'navbar' => 'absolute-navbar',
-            'form' => $form->createView()
+            'form' => $form->createView(),
+            'parentActive' => 'contact',
+            'subActive' => 'none'
         ]);
     }
 

@@ -23,7 +23,9 @@ class DefaultController extends Controller
             'pageTitle' => $entry->getPaginaTitel(),
             'slideshowFotos' => $entry->getSlideshowFotos(),
             'navbar' => 'absolute-navbar',
-            'footer' => false
+            'footer' => false,
+            'parentActive' => 'homepage',
+            'subActive' => 'none'
         ]);
     }
 }
