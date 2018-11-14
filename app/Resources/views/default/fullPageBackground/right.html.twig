@@ -1,20 +1,4 @@
-{% extends 'base.html.twig' %}
-
-{% block stylesheets %}
-  <link rel="stylesheet" href="/css/general.css" />
-  <link rel="stylesheet" href="/css/navbar.css" />
-  <link rel="stylesheet" href="/css/homepage.css" />
-  <link rel="stylesheet" href="/css/about-us.css" />
-  <link href="https://fonts.googleapis.com/css?family=Caveat" rel="stylesheet">
-{% endblock stylesheets %}
-
-{% block title %}{{pageTitle}}{% endblock title %}
-
-{% block body %}
-
-{% include 'default/subNavs/aboutUsSubNav.html.twig' %} {# include full background #}
-
-  {# full page background #}
+{# full page background #}
   <div class="full-page-background" style="height: 100vh">
   </div>
 
@@ -50,9 +34,3 @@
     </div>
   </div>
   {# end full page background #}
-
-{% endblock body %}
-
-{% block javascripts %}
-
-{% endblock javascripts %}

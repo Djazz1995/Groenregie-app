@@ -11,7 +11,7 @@ use Knp\Bundle\MarkdownBundle\MarkdownParserInterface;
 class AboutUsController extends Controller
 {
     /**
-     * @Route("/over-ons", name="about_us")
+     * @Route("/over-ons/visie", name="about_us")
      */
     public function indexAction(Request $request)
     {
@@ -20,18 +20,19 @@ class AboutUsController extends Controller
         $entry = $client->getEntry('5NqYtprbZSO0CES0Og0SMG'); // Dit id komt uit Contentful -> Content -> Over ons -> entry ID
         
         // replace this example code with whatever you need
-        return $this->render('default/fullPageBackground/left.html.twig', [
+        return $this->render('default/aboutUs/about_us.html.twig', [
             'base_dir' => realpath($this->getParameter('kernel.project_dir')).DIRECTORY_SEPARATOR,
             'pageTitle' => $entry->getPaginaTitel(),
             'pageHeader' => $entry->getPaginaHeader(),
             'content' => $entry->getInhoud(),
             'contentAuthor' => $entry->getInhoudAuteur(),
+            'image' => $entry->getPasfoto(),
             'quote' => $entry->getQuote(),
             'quoteAuthor' => $entry->getQuoteAuteur(),
             'profilePhoto' => $entry->getPasfoto(),
             'parentActive' => 'aboutUs',
             'subActive' => 'vision',
-            'withFoto' => true
+            'direction' => 'left'
         ]);
     }
 
@@ -45,13 +46,14 @@ class AboutUsController extends Controller
         $entry = $client->getEntry('5VFb4Cl4qcYWmwSmmsoAyo'); // Dit id komt uit Contentful -> Content -> Ons aanbod -> entry ID
 
         // replace this example code with whatever you need
-        return $this->render('default/fullPageBackground/left.html.twig', [
+        return $this->render('default/aboutUs/about_us.html.twig', [
             'base_dir' => realpath($this->getParameter('kernel.project_dir')).DIRECTORY_SEPARATOR,
             'pageTitle' => $entry->getPaginaTitel(),
             'pageHeader' => $entry->getOntwerpTitel(),
             'content' => $entry->getOntwerp(),
             'parentActive' => 'aboutUs',
-            'subActive' => 'gardenDesign'
+            'subActive' => 'gardenDesign',
+            'direction' => 'left'
         ]);
     }
 
@@ -65,13 +67,14 @@ class AboutUsController extends Controller
         $entry = $client->getEntry('5VFb4Cl4qcYWmwSmmsoAyo'); // Dit id komt uit Contentful -> Content -> Ons aanbod -> entry ID
 
         // replace this example code with whatever you need
-        return $this->render('default/fullPageBackground/right.html.twig', [
+        return $this->render('default/aboutUs/about_us.html.twig', [
             'base_dir' => realpath($this->getParameter('kernel.project_dir')).DIRECTORY_SEPARATOR,
             'pageTitle' => $entry->getPaginaTitel(),
             'pageHeader' => $entry->getAanlegTitel(),
             'content' => $entry->getAanleg(),
             'parentActive' => 'aboutUs',
-            'subActive' => 'gardenBuild'
+            'subActive' => 'gardenBuild',
+            'direction' => 'right'
         ]);
     }
 
@@ -85,13 +88,14 @@ class AboutUsController extends Controller
         $entry = $client->getEntry('5VFb4Cl4qcYWmwSmmsoAyo'); // Dit id komt uit Contentful -> Content -> Ons aanbod -> entry ID
 
         // replace this example code with whatever you need
-        return $this->render('default/fullPageBackground/right.html.twig', [
+        return $this->render('default/aboutUs/about_us.html.twig', [
             'base_dir' => realpath($this->getParameter('kernel.project_dir')).DIRECTORY_SEPARATOR,
             'pageTitle' => $entry->getPaginaTitel(),
             'pageHeader' => $entry->getOnderhoudTitel(),
             'content' => $entry->getOnderhoud(),
             'parentActive' => 'aboutUs',
-            'subActive' => 'gardenMaintainance'
+            'subActive' => 'gardenMaintainance',
+            'direction' => 'right'
         ]);
     }
 }

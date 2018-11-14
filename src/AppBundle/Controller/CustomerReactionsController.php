@@ -44,11 +44,13 @@ class CustomerReactionsController extends Controller
             'base_dir' => realpath($this->getParameter('kernel.project_dir')).DIRECTORY_SEPARATOR,
             'pageTitle' => $entry->getNaam(),
             'pageHeader' => $entry->getNaam(),
-            'thumbnail' => $entry->getThumbnail(),
-            'fullContent' => $entry->getVolleText(),
-            'author' => $entry->getAuteur(),
+            'image' => $entry->getThumbnail(),
+            'content' => $entry->getVolleText(),
+            'contentAuthor' => $entry->getAuteur(),
             'parentActive' => 'customerReactions',
-            'subActive' => 'none'
+            'subActive' => 'none',
+            'imageWidth' => 390,
+            'project' => $entry->getProject()
         ]);
     }
 }

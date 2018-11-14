@@ -44,11 +44,13 @@ class OurPartnersController extends Controller
         return $this->render('default/ourPartners/our_partner_specific.html.twig', [
             'base_dir' => realpath($this->getParameter('kernel.project_dir')).DIRECTORY_SEPARATOR,
             'pageTitle' => $entry->getNaam(),
-            'thumbnail' => $entry->getThumbnail(),
-            'fullContent' => $entry->getVolleText(),
+            'pageHeader' => $entry->getNaam(),
+            'image' => $entry->getThumbnail(),
+            'content' => $entry->getVolleText(),
             'website' => $entry->getWebsite(),
             'parentActive' => 'ourPartners',
-            'subActive' => 'none'
+            'subActive' => 'none',
+            'imageWidth' => 390
         ]);
     }
 }

@@ -1,43 +1,23 @@
 {% extends 'base.html.twig' %}
 
 {% block stylesheets %}
-    <link rel="stylesheet" href={{ asset('css/general.css') }} />
-    <link rel="stylesheet" href={{ asset('css/navbar.css') }} />
-    <link rel="stylesheet" href={{ asset('css/homepage.css') }} />
-    <link rel="stylesheet" href={{ asset('css/about-us.css') }} />
+  <link rel="stylesheet" href="/css/general.css" />
+  <link rel="stylesheet" href="/css/navbar.css" />
+  <link rel="stylesheet" href="/css/homepage.css" />
+  <link rel="stylesheet" href="/css/about-us.css" />
+  <link href="https://fonts.googleapis.com/css?family=Caveat" rel="stylesheet">
 {% endblock stylesheets %}
 
 {% block title %}{{pageTitle}}{% endblock title %}
 
 {% block body %}
-    <hr class="nav-seperator">
 
-    <!-- JUMBOTRON -->
-    <div class="jumbotron jumbotron-fluid align-center transparent white padding-bottom-15 reduced-jumbotron">
-        <div class="container">
-        <h2>{{pageTitle}}</h2>
-        </div>
-    </div>
-    <!-- END JUMBOTRON -->
+{% if direction is defined and direction == 'right' %}
+  {% include 'default/fullPageBackground/right.html.twig' %} {# include full background #}
+{% else %}
+  {% include 'default/fullPageBackground/left.html.twig' %} {# include full background #}
+{% endif %}
 
-    <!-- content -->
-        <div class="container content">
-        <div class="row">
-            <div class="col-xs-12 offset-xs-0 col-md-10 offset-md-1">
-            <div class="top-foto col-xs-12 col-md-8 offset-md-2">
-                <img src={{thumbnail.file.url}} width="100%;" />
-            </div>
-            {{fullContent|markdown}}
-            <p>
-                <a href={{website}} target="_blank" class="website-url">{{website}}</a>
-            </p>
-            <p>
-                <a class="btn btn-outline-primary float-left groenregie-green groenregie-button back-button" href={{path('our_partners')}}>Terug</a>
-            </p>
-            </div>
-        </div>
-        </div>
-    <!-- end content -->
 {% endblock body %}
 
 {% block javascripts %}
