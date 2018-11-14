@@ -25,10 +25,6 @@ class ImpressionsController extends Controller
         return $this->render('default/impressions/impressions_choose.html.twig', [
             'base_dir' => realpath($this->getParameter('kernel.project_dir')).DIRECTORY_SEPARATOR,
             'pageTitle' => '',
-            // 'pageHeader' => $entry->getPaginaHeader(),
-            // 'pageSubHeader' => $entry->getPaginaSubHeader(),
-            // 'modernGardens' => $entry->getModerneTuinen(),
-            // 'natureGardens' => $entry->getNatuurlijkeTuinen(),
             'parentActive' => 'ourProjects',
             'subActive' => 'none'
         ]);
@@ -49,15 +45,14 @@ class ImpressionsController extends Controller
             'pageTitle' => $entry->getPaginaTitel(),
             'pageHeader' => $entry->getPaginaHeader(),
             'pageSubHeader' => $entry->getPaginaSubHeader(),
-            'modernGardens' => $entry->getModerneTuinen(),
-            'natureGardens' => $entry->getNatuurlijkeTuinen(),
+            'projectPhotos' => $entry->getModerneTuinen(),
             'parentActive' => 'ourProjects',
-            'subActive' => 'none'
+            'subActive' => 'modernGardens'
         ]);
     }
 
     /**
-     * @Route("/projecten/natuurlijke-tuinen", name="impressions")
+     * @Route("/projecten/natuurlijke-tuinen", name="impressions_nature_gardens")
      */
     public function indexNatureAction(Request $request)
     {
@@ -71,10 +66,30 @@ class ImpressionsController extends Controller
             'pageTitle' => $entry->getPaginaTitel(),
             'pageHeader' => $entry->getPaginaHeader(),
             'pageSubHeader' => $entry->getPaginaSubHeader(),
-            'modernGardens' => $entry->getModerneTuinen(),
-            'natureGardens' => $entry->getNatuurlijkeTuinen(),
+            'projectPhotos' => $entry->getNatuurlijkeTuinen(),
             'parentActive' => 'ourProjects',
-            'subActive' => 'none'
+            'subActive' => 'natureGardens'
+        ]);
+    }
+
+    /**
+     * @Route("/projecten/dakterrassen", name="impressions_patios")
+     */
+    public function patioAction(Request $request)
+    {
+        $client = new \Contentful\Delivery\Client('4113452de26e27759b744718344945d5afc601e64e217688758dbfd649076208', 'jjzsv0091dq4', 'master');
+
+        $entry = $client->getEntry('5hJyBJIxfUuAKSqWyEk4Y2'); // Dit id komt uit Contentful -> Content -> Klantreacties -> entry ID
+
+        // replace this example code with whatever you need
+        return $this->render('default/impressions/impressions.html.twig', [
+            'base_dir' => realpath($this->getParameter('kernel.project_dir')).DIRECTORY_SEPARATOR,
+            'pageTitle' => $entry->getPaginaTitel(),
+            'pageHeader' => $entry->getPaginaHeader(),
+            'pageSubHeader' => $entry->getPaginaSubHeader(),
+            'projectPhotos' => $entry->getNatuurlijkeTuinen(),
+            'parentActive' => 'ourProjects',
+            'subActive' => 'patios'
         ]);
     }
 

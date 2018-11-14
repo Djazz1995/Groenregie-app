@@ -1,7 +1,7 @@
 .card {
     border-radius: none;
     border: none;
-    height: 75vh;
+    height: 78vh;
     overflow: hidden;
 }
 
@@ -32,3 +32,22 @@
     background-size: cover;
     -o-background-size: cover;
 }
+
+/* .project-text {
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    bottom: 0;
+    background: rgba(0,0,0, 0);
+    width: 100%;
+    transition: .40s;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.photo-card:hover .project-text {
+    background: rgba(0,0,0, .85);
+    opacity: 1;
+} */
