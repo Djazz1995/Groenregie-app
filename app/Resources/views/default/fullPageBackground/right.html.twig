@@ -1,32 +1,58 @@
-{# full page background #}
-  <div class="full-page-background" style="height: 100vh">
-  </div>
+  {# full page background #}
+  {% if pageBackground is defined and pageBackground is not null %}
+    <div class="full-page-background" style="height: 100vh">
+    </div>
+  {% endif %}
 
   <div class="container-fluid pb-full-page">
     <div class="row">
-        <div class="col-xs-12 col-md-6 offset-lg-1 col-lg-5 d-flex justify-content-center row flex-wrap-wrap">
-        {% if withFoto is defined and withFoto is not null %}
-          <div class="col-xs-12 col-md-12 col-lg-6 floating-image-right ">
-            <img src="./images/John_Zoete.jpg" width="250">
-          </div>
-          <div class="col-xs-12 col-md-12 col-lg-6 floating-quote ">
-            <span class="quote">"{{quote}}"</span>
-            <br>
-            <span class="quote">{{quoteAuthor}}</span>
-          </div>
-        {% endif %}
+
+        <div class="col-xs-12 col-md-5 col-lg-5 d-flex justify-content-center row flex-wrap-wrap" style="{{image is not defined or image is null ? 'visibility: hidden'}}">
+          {% if image is defined and image is not null %}
+            <div class="col-xs-12 col-md-12 col-lg-6 floating-image-right {{parentActive == 'inTheMedia' ? 'floating-image-right-media'}} ">
+              <img src="{{image.file.url}}" width="{{imageWidth is defined and imageWidth is not null ? imageWidth : 250 }}">
+            </div>
+
+            {% if quote is defined and quote is not null %}
+              <div class="col-xs-12 col-md-12 col-lg-6 floating-quote ">
+                <span class="quote">"{{quote}}"</span>
+                <br>
+                <span class="quote">{{quoteAuthor}}</span>
+              </div>
+            {% endif %}
+          {% endif %}
         </div>
 
-      <div class="offset-xs-1 col-xs-12 offset-md-1 col-md-5  offset-lg-1 col-lg-4 floating-text-left mt-5">
+      <div class="offset-xs-1 col-xs-12 offset-md-1 col-md-6 offset-lg-1 col-lg-6 floating-text-left mt-5">
         <div>
           <h2>{{pageHeader}}</h2>
         </div>
         <div class="green-outline">
           {{content|markdown}}
-          {% if contentAuthor is defined and contentAuthor is not null %}
-          <p class="quote">
-            {{contentAuthor}}
+
+          {% if website is defined and website is not null %}
+          <p>
+            <a href="{{website}}">
+              {{website}}
+            </a>
           </p>
+          {% endif %}
+
+          {% if contentAuthor is defined and contentAuthor is not null %}
+          <p>
+            <span class="quote">{{contentAuthor}}</span>
+
+            {% if project is defined and project is not null %}
+              <a href="{{ path('impression_specific', {'name': project.urlNaam, 'id': project.id })}}" class="groenregie-green mt-2 float-right">Bekijk dit project</a>
+            {% endif %}
+          </p>
+          {% endif %}
+
+
+          {% if pdf is defined and pdf is not null %}
+            <p>
+              <a href="{{ pdf.file.url }}" class="groenregie-green mt-2">Bekijk hele artikel</a>
+            </p>
           {% endif %}
         </div>
       </div>

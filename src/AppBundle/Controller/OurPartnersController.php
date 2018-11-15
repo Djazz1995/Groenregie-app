@@ -50,7 +50,9 @@ class OurPartnersController extends Controller
             'website' => $entry->getWebsite(),
             'parentActive' => 'ourPartners',
             'subActive' => 'none',
-            'imageWidth' => 390
+            'imageWidth' => $entry->getAfbeeldingBreedte() ? $entry->getAfbeeldingBreedte() . 'px' : null,
+            'pageBackground' => $entry->getPaginaAchtergrond(),
+            'direction' => $entry->getLayoutTextRechts() == true ? 'right' : 'left'
         ]);
     }
 }

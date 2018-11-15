@@ -1,0 +1,12 @@
+  <nav class="navbar navbar-expand-lg navbar-light bg-light justify-content-center subnav-bar">
+    <div id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto text-center">
+        <li class="nav-item active">
+          <a class="nav-link px-5 {{ subActive == 'newsAndUpdates' ? 'groenregie-green' : 'white' }}" href="{{ path('news_updates') }}">Nieuws & Updates</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link px-5 {{ subActive == 'inTheMedia' ? 'groenregie-green' : 'white' }}" href="{{ path('in_the_media') }}">In de media</a>
+        </li>
+      </ul>
+    </div>
+  </nav>

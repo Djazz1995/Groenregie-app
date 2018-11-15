@@ -26,7 +26,7 @@ class InTheMediaController extends Controller
             'pageSubHeader' => $entry->getPaginaSubHeader(),
             'mediaItems' => $entry->getMediaItems(),
             'parentActive' => 'inTheMedia',
-            'subActive' => 'none'
+            'subActive' => 'inTheMedia'
         ]);
     }
 
@@ -44,11 +44,15 @@ class InTheMediaController extends Controller
             'base_dir' => realpath($this->getParameter('kernel.project_dir')).DIRECTORY_SEPARATOR,
             'pageTitle' => $entry->getNaam(),
             'pageHeader' => $entry->getNaam(),
-            'thumbnail' => $entry->getThumbnail(),
-            'fullContent' => $entry->getVolleText(),
+            'image' => $entry->getThumbnail(),
+            'content' => $entry->getVolleText(),
             'pdf' => $entry->getPdf(),
             'parentActive' => 'inTheMedia',
-            'subActive' => 'none'
+            'subActive' => 'inTheMedia',
+            'direction' => $entry->getLayoutTextRechts() == true ? 'right' : 'left',
+            'imageWidth' => '350px',
+            'imageWidth' => $entry->getAfbeeldingBreedte() ? $entry->getAfbeeldingBreedte() . 'px' : null,
+            'pageBackground' => $entry->getPaginaAchtergrond()
         ]);
     }
 }

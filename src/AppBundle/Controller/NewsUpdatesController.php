@@ -26,7 +26,7 @@ class NewsUpdatesController extends Controller
             'pageSubHeader' => $entry->getPaginaSubHeader(),
             'news' => $entry->getNieuwsitems(),
             'parentActive' => 'news',
-            'subActive' => 'none'
+            'subActive' => 'newsAndUpdates'
         ]);
     }
 
@@ -44,11 +44,14 @@ class NewsUpdatesController extends Controller
             'base_dir' => realpath($this->getParameter('kernel.project_dir')).DIRECTORY_SEPARATOR,
             'pageTitle' => $entry->getNaam(),
             'pageHeader' => $entry->getNaam(),
-            'thumbnail' => $entry->getThumbnail(),
-            'fullContent' => $entry->getVolleText(),
+            'image' => $entry->getThumbnail(),
+            'content' => $entry->getVolleText(),
             'pdf' => $entry->getPdf(),
             'parentActive' => 'news',
-            'subActive' => 'none'
+            'subActive' => 'newsAndUpdates',
+            'imageWidth' => $entry->getAfbeeldingBreedte() ? $entry->getAfbeeldingBreedte() . 'px' : null,
+            'pageBackground' => $entry->getPaginaAchtergrond(),
+            'direction' => $entry->getLayoutTextRechts() == true ? 'right' : 'left'
         ]);
     }
 }

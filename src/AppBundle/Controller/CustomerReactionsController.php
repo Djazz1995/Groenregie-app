@@ -49,8 +49,10 @@ class CustomerReactionsController extends Controller
             'contentAuthor' => $entry->getAuteur(),
             'parentActive' => 'customerReactions',
             'subActive' => 'none',
-            'imageWidth' => 390,
-            'project' => $entry->getProject()
+            'project' => $entry->getProject(),
+            'imageWidth' => $entry->getAfbeeldingBreedte() ? $entry->getAfbeeldingBreedte() . 'px' : null,
+            'pageBackground' => $entry->getPaginaAchtergrond(),
+            'direction' => $entry->getLayoutTextRechts() == true ? 'right' : 'left'
         ]);
     }
 }

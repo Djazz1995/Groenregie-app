@@ -98,7 +98,7 @@ p:blank {
 .groenregie-button:hover {
     border-color: #8CC63F;
     background: #8CC63F;
-    color: white;
+    color: white !important;
 }
 
 .groenregie-green {
@@ -206,7 +206,6 @@ p:blank {
 }
 
 .full-page-background {
-  background: url('../images/natural-garden.jpg') no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   background-size: cover;
@@ -245,6 +244,10 @@ p:blank {
     z-index: 99;
     margin-top: 12rem!important;
     text-align: right;
+}
+
+.floating-image-right-media {
+    margin-top: 8rem!important;
 }
 
 .floating-quote {
@@ -294,6 +297,10 @@ p:blank {
 
     .pb-full-page {
         margin-bottom: 1rem!important;
+    }
+
+    .minh-vh {
+        padding-bottom: 7rem;
     }
 }
 
