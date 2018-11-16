@@ -24,6 +24,14 @@
 			  	<a class="d-block"href={{path('impression_specific', {'name': impression.urlNaam, 'id': impression.id})}}>
 					<div class="photo-card box-shadow">
 						<img class="card-img-top" alt="Thumbnail" style="width: 100%; display: block;" src={{impression.thumbnail.file.url}}>
+						<div class="text-overlay">
+							<div class="text-center">
+								<h4>{{ impression.titel }}</h4>
+								<p>
+									{{impression.korteText}}
+								</p>
+							</div>
+						</div>
 					</div>
 				</a>
 			</div>
