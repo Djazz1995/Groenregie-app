@@ -207,15 +207,16 @@ p:blank {
 }
 
 .full-page-background {
-  -webkit-background-size: cover;
+  /* -webkit-background-size: cover;
   -moz-background-size: cover;
   background-size: cover;
-  -o-background-size: cover;
+  -o-background-size: cover; */
   position: fixed;
   top:0;
   left: 0;
   right: 0;
-  height: 100vh
+  width: 100vw;
+  height: 100vh;
 }
 
 .full-page-background:before {

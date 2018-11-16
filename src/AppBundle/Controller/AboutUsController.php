@@ -55,7 +55,8 @@ class AboutUsController extends Controller
             'content' => $entry->getOntwerp(),
             'parentActive' => 'aboutUs',
             'subActive' => 'gardenDesign',
-            'direction' => $entry->getOntwerpLayoutRechts() == true ? 'right' : 'left'
+            'direction' => $entry->getOntwerpLayoutRechts() == true ? 'right' : 'left',
+            'pageBackground' => $entry->getOntwerpAchtergrond(),
         ]);
     }
 
@@ -76,7 +77,8 @@ class AboutUsController extends Controller
             'content' => $entry->getAanleg(),
             'parentActive' => 'aboutUs',
             'subActive' => 'gardenBuild',
-            'direction' => $entry->getAanlegLayoutRechts() == true ? 'right' : 'left'
+            'direction' => $entry->getAanlegLayoutRechts() == true ? 'right' : 'left',
+            'pageBackground' => $entry->getAanlegAchtergrond(),
         ]);
     }
 
@@ -97,7 +99,8 @@ class AboutUsController extends Controller
             'content' => $entry->getOnderhoud(),
             'parentActive' => 'aboutUs',
             'subActive' => 'gardenMaintainance',
-            'direction' => $entry->getOnderhoudLayoutRechts() == true ? 'right' : 'left'
+            'direction' => $entry->getOnderhoudLayoutRechts() == true ? 'right' : 'left',
+            'pageBackground' => $entry->getOnderhoudAchtergrond(),
         ]);
     }
 }
