@@ -21,7 +21,7 @@
 
         <link rel="icon" type="image/png" sizes="96x96" href="https://groenregie.nl/files/icons/favicon-96x96.png">
     </head>
-    <body class="minh-vh">
+    <body class="{{parentActive != 'homepage' ? 'minh-vh'}}">
         {% include 'default/navbar/primaryNav.html.twig' %}
         {% block body %}{% endblock %}
         
