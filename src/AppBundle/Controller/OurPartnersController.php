@@ -48,11 +48,12 @@ class OurPartnersController extends Controller
             'image' => $entry->getThumbnail(),
             'content' => $entry->getVolleText(),
             'website' => $entry->getWebsite(),
+            'quote' => $entry->getQuote(),
+            'quoteAuthor' => $entry->getQuoteAuteur(),
             'parentActive' => 'ourPartners',
             'subActive' => 'none',
             'imageWidth' => $entry->getAfbeeldingBreedte() ? $entry->getAfbeeldingBreedte() . 'px' : null,
-            'pageBackground' => $entry->getPaginaAchtergrond(),
-            'direction' => $entry->getLayoutTextRechts() == true ? 'right' : 'left'
+            'pageBackground' => $entry->getPaginaAchtergrond()
         ]);
     }
 }

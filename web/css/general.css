@@ -179,6 +179,14 @@ p:blank {
 .quote {
     font-family: 'Caveat', cursive;
     font-size: 1.5rem;
+    max-width: 280px;
+    word-break: keep-all;
+}
+
+.quote-partner {
+    font-family: 'Caveat', cursive;
+    font-size: 1.5rem;
+    word-break: keep-all;
 }
 
 .form-check-input {
@@ -223,7 +231,7 @@ p:blank {
     bottom: 0;
     left: 0;
     background-image: linear-gradient(to bottom right,#000,#000);
-    opacity: .85; 
+    opacity: .65; 
     z-index: 1;
 }
 
@@ -264,12 +272,7 @@ p:blank {
 
 .floating-image-right {
     z-index: 99;
-    margin-top: 12rem!important;
-    text-align: right;
-}
-
-.floating-image-right-media {
-    margin-top: 8rem!important;
+    margin-top: 10.82rem !important;
 }
 
 .floating-quote {
@@ -284,6 +287,12 @@ p:blank {
 
 .flex-wrap-wrap {
     flex-wrap: wrap;
+}
+
+.vhg-logo {
+    position: absolute;
+    left: 10px;
+    bottom: 45px;
 }
 
 /* Medium devices (tablets, 768px and down) */
@@ -323,6 +332,10 @@ p:blank {
 
     .minh-vh {
         padding-bottom: 7rem;
+    }
+
+    .quote {
+        max-width: none;
     }
 }
 

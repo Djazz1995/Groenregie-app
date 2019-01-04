@@ -24,6 +24,10 @@
 {% endblock body %}
 
 {% block javascripts %}
+	<script>
+		$("img").attr("data-title", function() { return $(this).attr("title"); } );
+		$("img").removeAttr("title");
+	</script>
 	<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 	<script>
 	(function(){

@@ -7,10 +7,9 @@
 
 .choose-card-body {
     position: absolute;
-    top: 92%;
-    background: rgba(0,0,0, .65);
+    top: 75%;
+    background: rgba(0,0,0,.65);
     width: 100%;
-    min-height: 200px;
     transition: .65s;
     height: 100%;
 }
@@ -20,8 +19,6 @@
 }
 
 .card:hover .choose-card-body {
-    top: 0;
-    bottom: 0;
     background: rgba(0,0,0, .95);
 }
 
@@ -32,22 +29,3 @@
     background-size: cover;
     -o-background-size: cover;
 }
-
-/* .project-text {
-    position: absolute;
-    opacity: 0;
-    top: 0;
-    bottom: 0;
-    background: rgba(0,0,0, 0);
-    width: 100%;
-    transition: .40s;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap;
-}
-
-.photo-card:hover .project-text {
-    background: rgba(0,0,0, .85);
-    opacity: 1;
-} */

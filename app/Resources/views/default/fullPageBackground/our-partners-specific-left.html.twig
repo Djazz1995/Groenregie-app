@@ -41,8 +41,18 @@
       
       {% if image is defined and image is not null %}
         <div class="col-xs-12 col-md-6 col-lg-6 d-flex justify-content-center row flex-wrap-wrap">
-          <div class="col-xs-12 col-md-12 col-lg-12 floating-image-right">
+          <div class="col-xs-12 col-md-12 col-lg-10 floating-image-right">
             <img src="{{image.file.url}}" width="{{imageWidth is defined and imageWidth is not null ? imageWidth : '100%' }}">
+            
+            {% if quote is defined and quote is not null %}
+              <div class="col-12 px-0 my-3 quote-partner">
+                <span>"{{quote}}"</span>
+                <br>
+                {% if quoteAuthor is defined and quoteAuthor is not null %}
+                    <span>{{quoteAuthor}}</span>
+                {% endif %}
+              </div>
+          {% endif %}
           </div>
         </div>
       {% endif %}

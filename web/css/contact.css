@@ -92,6 +92,7 @@
     .absolute-navbar {
         position: relative;
         background: #242625 !important;
+        border-bottom: 1px solid #8CC63F;
     }
 
     .contact-icon {

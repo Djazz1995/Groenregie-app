@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "e2b607a12f895bf5ec0ce10f3d22a3c5",
+    "content-hash": "fae20c83ba3a65d7df94a19f136db948",
     "packages": [
         {
             "name": "cache/adapter-common",
@@ -310,16 +310,16 @@
         },
         {
             "name": "contentful/contentful",
-            "version": "3.3.0",
+            "version": "3.4.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/contentful/contentful.php.git",
-                "reference": "bc6773e50b0ddf62c4dcc470dafbc6eea7feee3b"
+                "reference": "a681394be108ecb37f0d551681fc415eaf4f1a7c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/contentful/contentful.php/zipball/bc6773e50b0ddf62c4dcc470dafbc6eea7feee3b",
-                "reference": "bc6773e50b0ddf62c4dcc470dafbc6eea7feee3b",
+                "url": "https://api.github.com/repos/contentful/contentful.php/zipball/a681394be108ecb37f0d551681fc415eaf4f1a7c",
+                "reference": "a681394be108ecb37f0d551681fc415eaf4f1a7c",
                 "shasum": ""
             },
             "require": {
@@ -344,7 +344,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "3.3.0-dev"
+                    "dev-master": "3.4.0-dev"
                 }
             },
             "autoload": {
@@ -357,7 +357,7 @@
                 "MIT"
             ],
             "description": "SDK for the Contentful Content Delivery API",
-            "time": "2018-06-18T08:38:53+00:00"
+            "time": "2018-08-24T10:57:48+00:00"
         },
         {
             "name": "contentful/core",

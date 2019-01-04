@@ -39,4 +39,10 @@
         crossorigin="anonymous"></script>
         {% block javascripts %}{% endblock %}
     </body>
+    <script>
+    if ($(window).width() > 767) {
+        var marginTop = $('.green-outline').offset().top;
+        $('.floating-image-right img').offset({top: marginTop});
+    }
+    </script>
 </html>
