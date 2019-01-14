@@ -9,7 +9,7 @@ use Knp\Bundle\MarkdownBundle\MarkdownParserInterface;
 
 use Psr\Log\LoggerInterface;
 
-class ImpressionsController extends Controller
+class OurProjectsController extends Controller
 {
 
     /**
@@ -19,14 +19,15 @@ class ImpressionsController extends Controller
     {
         $client = new \Contentful\Delivery\Client('4113452de26e27759b744718344945d5afc601e64e217688758dbfd649076208', 'jjzsv0091dq4', 'master');
 
-        $entry = $client->getEntry('5hJyBJIxfUuAKSqWyEk4Y2'); // Dit id komt uit Contentful -> Content -> Klantreacties -> entry ID
+        $entry = $client->getEntry('5hJyBJIxfUuAKSqWyEk4Y2');
 
         // replace this example code with whatever you need
         return $this->render('default/impressions/impressions_choose.html.twig', [
             'base_dir' => realpath($this->getParameter('kernel.project_dir')).DIRECTORY_SEPARATOR,
-            'pageTitle' => '',
+            'pageTitle' => $entry->getPaginaTitel(),
             'parentActive' => 'ourProjects',
-            'subActive' => 'none'
+            'subActive' => 'none',
+            'entry' => $entry
         ]);
     }
 
@@ -37,7 +38,7 @@ class ImpressionsController extends Controller
     {
         $client = new \Contentful\Delivery\Client('4113452de26e27759b744718344945d5afc601e64e217688758dbfd649076208', 'jjzsv0091dq4', 'master');
 
-        $entry = $client->getEntry('5hJyBJIxfUuAKSqWyEk4Y2'); // Dit id komt uit Contentful -> Content -> Klantreacties -> entry ID
+        $entry = $client->getEntry('5hJyBJIxfUuAKSqWyEk4Y2');
 
         // replace this example code with whatever you need
         return $this->render('default/impressions/impressions.html.twig', [
@@ -47,7 +48,8 @@ class ImpressionsController extends Controller
             'pageSubHeader' => $entry->getPaginaSubHeader(),
             'projectPhotos' => $entry->getModerneTuinen(),
             'parentActive' => 'ourProjects',
-            'subActive' => 'modernGardens'
+            'subActive' => 'modernGardens',
+            'entry' => $entry
         ]);
     }
 
@@ -58,7 +60,7 @@ class ImpressionsController extends Controller
     {
         $client = new \Contentful\Delivery\Client('4113452de26e27759b744718344945d5afc601e64e217688758dbfd649076208', 'jjzsv0091dq4', 'master');
 
-        $entry = $client->getEntry('5hJyBJIxfUuAKSqWyEk4Y2'); // Dit id komt uit Contentful -> Content -> Klantreacties -> entry ID
+        $entry = $client->getEntry('5hJyBJIxfUuAKSqWyEk4Y2');
 
         // replace this example code with whatever you need
         return $this->render('default/impressions/impressions.html.twig', [
@@ -68,7 +70,30 @@ class ImpressionsController extends Controller
             'pageSubHeader' => $entry->getPaginaSubHeader(),
             'projectPhotos' => $entry->getNatuurlijkeTuinen(),
             'parentActive' => 'ourProjects',
-            'subActive' => 'natureGardens'
+            'subActive' => 'natureGardens',
+            'entry' => $entry
+        ]);
+    }
+
+    /**
+     * @Route("/projecten/daktuinen", name="impressions_roof_gardens")
+     */
+    public function indexRoofAction(Request $request)
+    {
+        $client = new \Contentful\Delivery\Client('4113452de26e27759b744718344945d5afc601e64e217688758dbfd649076208', 'jjzsv0091dq4', 'master');
+
+        $entry = $client->getEntry('5hJyBJIxfUuAKSqWyEk4Y2');
+
+        // replace this example code with whatever you need
+        return $this->render('default/impressions/impressions.html.twig', [
+            'base_dir' => realpath($this->getParameter('kernel.project_dir')).DIRECTORY_SEPARATOR,
+            'pageTitle' => $entry->getPaginaTitel(),
+            'pageHeader' => $entry->getPaginaHeader(),
+            'pageSubHeader' => $entry->getPaginaSubHeader(),
+            'projectPhotos' => $entry->getDakTuinen(),
+            'parentActive' => 'ourProjects',
+            'subActive' => 'roofGardens',
+            'entry' => $entry
         ]);
     }
 
@@ -79,7 +104,7 @@ class ImpressionsController extends Controller
     {
         $client = new \Contentful\Delivery\Client('4113452de26e27759b744718344945d5afc601e64e217688758dbfd649076208', 'jjzsv0091dq4', 'master');
 
-        $entry = $client->getEntry('5hJyBJIxfUuAKSqWyEk4Y2'); // Dit id komt uit Contentful -> Content -> Klantreacties -> entry ID
+        $entry = $client->getEntry('5hJyBJIxfUuAKSqWyEk4Y2');
 
         // replace this example code with whatever you need
         return $this->render('default/impressions/impressions.html.twig', [
@@ -89,7 +114,8 @@ class ImpressionsController extends Controller
             'pageSubHeader' => $entry->getPaginaSubHeader(),
             'projectPhotos' => $entry->getNatuurlijkeTuinen(),
             'parentActive' => 'ourProjects',
-            'subActive' => 'patios'
+            'subActive' => 'patios',
+            'entry' => $entry
         ]);
     }
 
@@ -100,7 +126,7 @@ class ImpressionsController extends Controller
     {
         $client = new \Contentful\Delivery\Client('4113452de26e27759b744718344945d5afc601e64e217688758dbfd649076208', 'jjzsv0091dq4', 'master');
 
-        $entry = $client->getEntry($id); // Dit id komt uit Contentful -> Content -> klantreactie-> entry ID
+        $entry = $client->getEntry($id);
         
         return $this->render('default/impressions/impressions_specific.html.twig', [
             'pageTitle' => $entry->getTitel(),
@@ -109,7 +135,8 @@ class ImpressionsController extends Controller
             'fullContent' => $entry->getVolleText(),
             'fotos' => $entry->getFotos(),
             'parentActive' => 'ourProjects',
-            'subActive' => 'none'
+            'subActive' => 'none',
+            'entry' => $entry
         ]);
     }
 }

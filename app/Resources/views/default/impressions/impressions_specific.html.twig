@@ -4,6 +4,7 @@
     <link rel="stylesheet" href={{ asset('css/general.css') }} />
     <link rel="stylesheet" href={{ asset('css/navbar.css') }} />
     <link rel="stylesheet" href={{ asset('css/homepage.css') }} />
+    <link rel="stylesheet" href={{ asset('/css/gallery.css') }} />
     <link href="https://cdn.rawgit.com/sachinchoolur/lightgallery.js/master/dist/css/lightgallery.css" rel="stylesheet">
     <link rel="stylesheet" href={{ asset('css/lightgallery.css') }} />
 {% endblock stylesheets %}
@@ -35,7 +36,7 @@
     <div class="container-fluid">
         <div id='lightgallery' class="row">
             {% for foto in fotos %}
-                <div class="col-lg-4 col-md-6 col-xs-12 gallery-col py-1 px-1" data-src={{foto.file.url}} data-sub-html={{foto.description}} data-pinterest-text="Pin it1" data-tweet-text="share on twitter 1">
+                <div class="col-lg-4 col-md-6 col-xs-12 gallery-col" data-src={{foto.file.url}} data-sub-html={{foto.description}} data-pinterest-text="Pin it1" data-tweet-text="share on twitter 1">
                     <a href="">
                         <img class="img-responsive w-100" src={{foto.file.url}} alt={{foto.title}} title={{foto.title}}>
                     </a>
