@@ -3,15 +3,15 @@
         <div class="row">
             <div class="col d-flex">
                 <div class="d-flex flex-wrap">
-                {% if fbUrl is not null %}    
-                    <a href={{fbUrl}}><i class="fab fa-facebook-f fb-color"></i></a>
-                {% endif %}
-                {% if instaUrl is not null %}
-                    <a href={{instaUrl}}><i class="fab fa-instagram insta-color"></i></a>
-                {% endif %}
-                {% if linUrl is not null %}
-                    <a href={{linUrl}}><i class="fab fa-linkedin-in lin-color"></i></a>
-                {% endif %}
+                    {% if fbUrl is not null %}    
+                        <a href={{fbUrl}}><i class="fab fa-facebook-f fb-color"></i></a>
+                    {% endif %}
+                    {% if instaUrl is not null %}
+                        <a href={{instaUrl}}><i class="fab fa-instagram insta-color"></i></a>
+                    {% endif %}
+                    {% if linUrl is not null %}
+                        <a href={{linUrl}}><i class="fab fa-linkedin-in lin-color"></i></a>
+                    {% endif %}
                 </div>
                 <div class="d-flex flex-wrap">
                     <span class='d-block align-self-center'>{{companyName}} © 2018</span>
@@ -27,6 +27,7 @@
                     <span><a href={{path('general_declaration')}} class="green-link">Algemene Voorwaarden</a></span>
                 </div>
             </div>
+            <img class="float-right" src={{ asset('images/vhg.png') }}  height="20" />
         </div>
     </div>
 </footer>

@@ -37,9 +37,6 @@
           <div class="col-md-8 col-sm-12">
             <h3 class="mt-2 our-partner-h">{{newsitem.naam}}</h3>
             {{newsitem.korteText|markdown}}
-            <p>
-              <a href={{path('news_updates_specific', {'name': newsitem.urlNaam, 'id': newsitem.id})}} class="btn btn-outline-primary float-right groenregie-green groenregie-button more-info">lees meer</a>
-            </p>
           </div>
         </div>
         {% endfor %}

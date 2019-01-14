@@ -7,7 +7,7 @@
 
 .choose-card-body {
     position: absolute;
-    top: 75%;
+    top: 65%;
     background: rgba(0,0,0,.65);
     width: 100%;
     transition: .65s;

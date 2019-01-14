@@ -36,9 +36,11 @@
           <div class="col-md-8 col-sm-12">
             <h3 class="mt-2 our-partner-h">{{mediaitem.naam}}</h3>
             {{mediaitem.korteText|markdown}}
+            {% if mediaitem.getPdf() is defined and mediaitem.getPdf() is not null %}
             <p>
-              <a href={{path('in_the_media_specific', {'name': mediaitem.urlNaam, 'id': mediaitem.id})}} class="btn btn-outline-primary float-right groenregie-green groenregie-button more-info">lees meer</a>
+              <a target="_blank" href={{mediaitem.getPdf().getFile().url}} class="btn btn-outline-primary float-right groenregie-green groenregie-button more-info">Bekijk artikel</a>
             </p>
+            {% endif %}
           </div>
         </div>
         {% endfor %}
