@@ -18,10 +18,6 @@
     cursor: pointer;
 }
 
-.card:hover .choose-card-body {
-    background: rgba(0,0,0, .95);
-}
-
 .with-background {
     -webkit-background-size: contain;
     -moz-background-size: contain;
