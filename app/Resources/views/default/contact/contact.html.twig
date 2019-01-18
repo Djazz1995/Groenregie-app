@@ -5,6 +5,8 @@
     <link rel="stylesheet" href={{ asset('css/navbar.css') }} />
     <link rel="stylesheet" href={{ asset('css/homepage.css') }} />
     <link rel="stylesheet" href={{ asset('css/contact.css') }} />
+	<link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.52.0/mapbox-gl.css' rel='stylesheet' />
+	<script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.52.0/mapbox-gl.js'></script>
 {% endblock stylesheets %}
 
 {% block title %}Contact{% endblock title %}
@@ -95,39 +97,21 @@
 {% endblock body %}
 
 {% block javascripts %}
-<script src='https://www.google.com/recaptcha/api.js'></script>
-<script>
-		// Initialize and add the map
-		function initMap() {
-			// The location of Uluru
-			var center = { lat: 52.040023, lng: 4.705377 };
-			var uluru = { lat: 52.039727, lng: 4.717090 };
-			// The map, centered at Uluru
-			var map = new google.maps.Map(document.getElementById('map'),
-				{
-					zoom: 15,
-					center: uluru,
-					disableDefaultUI: true,
-					zoomControl: true,
-					scaleControl: false
-				});
-			// The marker, positioned at Uluru
-			var image = new google.maps.MarkerImage(
-				"./images/marker.png",
-				new google.maps.Size(40, 60),
-				new google.maps.Point(0, 0),
-				new google.maps.Point(17, 34),
-				new google.maps.Size(40, 60)
-			);
+	<script src='https://www.google.com/recaptcha/api.js'></script>
+	<script>
+		mapboxgl.accessToken = 'pk.eyJ1IjoiZGphenoxOTk1IiwiYSI6ImNqbXc0Mjc1dTA2c3QzcXBqZzBsdTR1czEifQ.81kundo2wtbDgcQC4W4SeA';
+		var map = new mapboxgl.Map({
+			container: 'map',
+			style: 'mapbox://styles/mapbox/streets-v9',
+			center: [4.717114, 52.039440],
+			zoom: 14
+		});
 
-			var marker = new google.maps.Marker({
-				position: uluru,
-				map: map,
-				icon: image,
-				animation: google.maps.Animation.DROP,
-			});
-		}
-	</script>
-	<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDsR438xUaitNnO_6K8rTZKd7pPQFTAmEk&callback=initMap">
+		var el = document.createElement('div');
+  		el.className = 'marker';
+
+		var marker = new mapboxgl.Marker(el)
+		.setLngLat([4.717114, 52.039440])
+		.addTo(map);
 	</script>
 {% endblock javascripts %}

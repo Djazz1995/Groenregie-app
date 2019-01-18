@@ -24,3 +24,7 @@
 .gallery-col {
     padding: 8px;
 }
+
+.gallery-col:hover {
+    cursor: pointer;
+}

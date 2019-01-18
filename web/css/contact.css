@@ -77,6 +77,16 @@
     color: red;
 }
 
+.marker {
+  background-image: url('../images/marker-image.jpeg');
+  background-size: contain;
+  padding: 10px;
+  width: 25px;
+  height: 25px;
+  border-radius: 10%;
+  cursor: pointer;
+}
+
 @media (max-width: 850px) {
     .contact-container {
         position: relative;

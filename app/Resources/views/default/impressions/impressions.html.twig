@@ -22,8 +22,8 @@
 			{% for impression in projectPhotos %}
 			<div class="col-lg-4 col-md-6 col-xs-12 gallery-col">
 			  	<a class="d-block"href={{path('impression_specific', {'name': impression.urlNaam, 'id': impression.id})}}>
-					<div class="photo-card box-shadow">
-						<img class="card-img-top" alt="Thumbnail" style="width: 100%; display: block;" src={{impression.thumbnail.file.url}}>
+					<div class="photo-card box-shadow" style="height: 35vh; background: url({{impression.thumbnail.file.url}}) no-repeat center center; background-size: cover">
+						{# <img class="card-img-top" alt="Thumbnail" style="width: 100%; display: block;" src={{impression.thumbnail.file.url}}> #}
 						<div class="text-overlay">
 							<div class="text-center">
 								<h4>{{ impression.titel }}</h4>
