@@ -309,6 +309,10 @@ p:blank {
         flex-wrap: wrap;
     }
 
+    .mobile-hidden {
+        display: none;
+    }
+
     .floating-text-left {
     margin-top: 1rem!important;
     }
@@ -332,7 +336,7 @@ p:blank {
 
 
 /* Large devices (desktops, 992px and up) */
-@media (max-width: 991px) { ... }
+@media (max-width: 991px) {  }
 
 /* Extra large devices (large desktops, 1200px and up) */
-@media (max-width: 1199px) { ... } */
+@media (max-width: 1199px) { }
