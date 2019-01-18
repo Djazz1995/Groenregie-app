@@ -205,11 +205,6 @@ p:blank {
     margin-top: 40px;
 }
 
-.minh-vh {
-    min-height: 100vh;
-    padding-bottom: 2rem;
-}
-
 .justify-content-center {
     justify-content: center;
 }
@@ -328,10 +323,6 @@ p:blank {
 
     .pb-full-page {
         margin-bottom: 1rem!important;
-    }
-
-    .minh-vh {
-        padding-bottom: 7rem;
     }
 
     .quote {

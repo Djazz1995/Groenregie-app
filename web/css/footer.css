@@ -35,11 +35,10 @@ footer span {
 
 @media (max-width: 575px) { }
 
-/* Medium devices (tablets, 768px and up) */
+/* Medium devices (tablets, 768px and down) */
 @media (max-width: 767px) {
     footer {
-        position: fixed;
-        bottom: 0;
+        position: relative;
     }
  }
 
