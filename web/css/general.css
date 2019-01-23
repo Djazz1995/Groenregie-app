@@ -12,7 +12,7 @@ a, a:hover, a:focus, a:active {
     color: white
 }
 
-.green-link {
+.green-link, .green-outline a {
     color: #8CC63F;
 }
 
@@ -226,7 +226,7 @@ p:blank {
     bottom: 0;
     left: 0;
     background-image: linear-gradient(to bottom right,#000,#000);
-    opacity: .65; 
+    opacity: .55; 
     z-index: 1;
 }
 

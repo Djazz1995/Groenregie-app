@@ -20,6 +20,12 @@
   {% include 'default/fullPageBackground/about-us-left.html.twig' %} {# include full background #}
 {% endif %}
 
+{% if subActive == 'gardenBuild' %}
+  <a class="d-block vhg-logo-on-page"href="https://www.vhg.org/">
+    <img class="mt-4" src={{ asset('images/vhg.png') }}  height="80" />
+  </a>
+{% endif %}
+
 {% endblock body %}
 
 {% block javascripts %}

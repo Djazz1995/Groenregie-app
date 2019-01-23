@@ -7,11 +7,13 @@
 
 .choose-card-body {
     position: absolute;
-    top: 65%;
-    background: rgba(0,0,0,.65);
-    width: 100%;
+    top: 45%;
+    background: rgba(36, 38, 37, 0.39) !important;
+    width: 86%;
+    margin-left: 7%;
+    bottom: 10%;
     transition: .65s;
-    height: 100%;
+    height: 310px;
 }
 
 .card:hover {
@@ -23,4 +25,30 @@
     -moz-background-size: contain;
     background-size: contain;
     -o-background-size: contain;
+}
+
+@media (max-width: 575px) { }
+
+/* Medium devices (tablets, 768px and down) */
+@media (max-width: 767px) {
+
+ }
+
+/* Large devices (desktops, 992px and down) */
+@media (max-width: 991px) {
+    .choose-card-body {
+    position: absolute;
+    top: 65%;
+    background: rgba(36, 38, 37, 0.39) !important;
+    width: 100%;
+    margin-left: 0;
+    bottom: 0%;
+    transition: .65s;
+    height: 100%;
+}
+ }
+
+/* Extra large devices (large desktops, 1200px and down) */
+@media (max-width: 1199px) { 
+
 }
