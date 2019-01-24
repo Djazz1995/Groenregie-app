@@ -26,13 +26,11 @@
 }
 
 .gallery-text-col {
-    height: 71.94vh;
+    height: 100%;
     overflow: hidden;
     border: 1px solid #8CC63F;
-    border-left: 1px solid transparent;
-    padding-top: 15px;
-    padding-bottom: 15px;
-    margin-top: 8px;
+    /* border-left: 1px solid transparent; */
+    padding: 15px;
 }
 
 .gallery-text-col p {

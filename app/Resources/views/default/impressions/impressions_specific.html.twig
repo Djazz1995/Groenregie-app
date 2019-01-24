@@ -15,13 +15,15 @@
 {% block body %}
     <hr class="nav-seperator">
 
-    <div class="container-fluid list-content">
+    <div class="container-fluid list-content px-5">
         <div class="row">
-            <div class="col-lg-4 col-md-12 col-xs-12 gallery-col gallery-text-col">
-                <h4>{{pageHeader}}</h4>
-                <p>
-                    {{fullContent|markdown}}
-                </p>
+            <div class="col-lg-4 col-md-12 col-xs-12 gallery-col">
+                <div class="gallery-text-col">
+                    <h4>{{pageHeader}}</h4>
+                    <p>
+                        {{fullContent|markdown}}
+                    </p>
+                </div>
             </div>
             <div class="col-lg-8 col-md-12 col-xs-12">
                 <div class="row">
