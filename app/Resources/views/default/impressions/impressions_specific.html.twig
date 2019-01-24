@@ -15,7 +15,7 @@
 {% block body %}
     <hr class="nav-seperator">
 
-    <div class="container-fluid list-content px-4">
+    <div class="container-fluid list-content px-5">
         <div class="row">
             <div class="col-lg-4 col-md-12 col-xs-12 gallery-col">
                 <div class="gallery-text-col">
@@ -79,12 +79,15 @@
         var fotos = {{ fotos|json_encode|raw }}
         var galleryItems = [];
 
+        console.log(fotos[0].fields);
+
         fotos.forEach((foto) => {
             galleryItems.push(
                 {
                     src: foto.fields.file.url,
                     w: foto.fields.file.details.image.width,
-                    h: foto.fields.file.details.image.height
+                    h: foto.fields.file.details.image.height,
+                    title: foto.fields.title
                 }
             )
         });
