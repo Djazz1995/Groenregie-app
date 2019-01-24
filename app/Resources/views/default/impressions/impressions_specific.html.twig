@@ -15,22 +15,13 @@
 {% block body %}
     <hr class="nav-seperator">
 
-    <!-- JUMBOTRON -->
-    <div class="jumbotron jumbotron-fluid align-center transparent white padding-bottom-15 reduced-jumbotron">
-        <div class="container">
-        <h2>{{pageHeader}}</h2>
-        </div>
-    </div>
-    <!-- END JUMBOTRON -->
-
     <div class="container-fluid list-content">
         <div class="row">
-            <div class="col-lg-4 col-md-12 col-xs-12 gallery-col" style="height: 70vh; overflow: scroll;">      
-                In het najaar van 2015 werd door onze goede collega van Stijltuinen een strak ontwerp gemaakt voor de tuin rondom een nieuwbouwwoning. Deze designtuin in Heemstede is met veel zorg ontworpen en klopt tot in de kleinste details. Over alles is nagedacht: van speciaal handgemaakte hekwerken tot en met het moderne tuinmeubilair. Heel mooi is de vlonderbaan van Esthec (composiet), welke in de voortuin de entree verfraaid en in de achtertuin doorloopt in een as naar de achtererfgrens.
-
-                In goed overleg met Stijltuinen heeft Groenregie de tuin in het voorjaar van 2016 aangelegd. Voordat met de aanleg werd begonnen is goed nagedacht over de constructie van verschillende onderdelen in de tuin, zoals o.a. het stevig funderen van het metalen hekwerk. Tevens hebben we van tevoren op tekening bepaald waar alle kabels en leidingen het beste ingegraven konden worden. De eerder genoemde vlonderbaan van Esthec is blind gemonteerd op onderbalken. Zo is er geen schroefje zichtbaar. Naast de vlonderbanen ligt een bijzonder verhardingsmateriaal: Beach Pebbles in de specie. Zo liggen deze keien muurvast en is deze oppervlakte goed beloopbaar. Andere toegepaste verhardingsmaterialen zijn Schellevis tegels van 100 x 100 cm (op de oprit zijn deze tegels zelfs 8 cm dik), gebakken klinkers met een onkruidwerende voeg en het zogenaamde Black Beauty grind op speciale stabilisatieplaten. Rondom de ingegraven trampoline hebben wij kunstgras gelegd. Dit past natuurlijk perfect in het plaatje van een onderhoudsarme tuin: een wens van de tuineigenaar.Twee speciaal op maat gemaakte watertafels zorgen voor een speels effect in de tuin en diverse strakke plantenbakken met wintergroene beplanting maken deze designtuin in Heemstede ook aantrekkelijk in de winterperiode.
-
-                De tuineigenaren zijn blij met het mooie, moderne eindresultaat. Onderhoud behoeft de tuin maar weinig. In de zomer zorgt een automatisch werkend beregeningssysteem voor de vochtvoorziening. Sfeervolle 12 volt tuinverlichting door middel van Led-techniek zorgt voor een adembenemend plaatje in de schemering.
+            <div class="col-lg-4 col-md-12 col-xs-12 gallery-col gallery-text-col">
+                <h4>{{pageHeader}}</h4>
+                <p>
+                    {{fullContent|markdown}}
+                </p>
             </div>
             <div class="col-lg-8 col-md-12 col-xs-12">
                 <div class="row">
@@ -42,7 +33,6 @@
                             data-index={{loop.index - 1}}
                             onclick="openPhotoswipe({{loop.index - 1}})"
                             style="
-                            height: 35vh; 
                             background: url({{foto.file.url}}) no-repeat center center; background-size: cover"
                             >
                             </div>
@@ -62,7 +52,6 @@
                 data-index={{loop.index - 1}}
                 onclick="openPhotoswipe({{loop.index - 1}})"
                 style="
-                height: 35vh; 
                 background: url({{foto.file.url}}) no-repeat center center; background-size: cover"
                 >
                 </div>
@@ -99,7 +88,6 @@
         });
 
         var openPhotoswipe = (index) => {
-            console.log("index inside photoswipe", index);
             var pswpElement = document.querySelectorAll('.pswp')[0];
             
             var options = {
