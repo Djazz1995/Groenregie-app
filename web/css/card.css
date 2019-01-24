@@ -14,6 +14,7 @@
     bottom: 10%;
     transition: .65s;
     height: 310px;
+    overflow: hidden;
 }
 
 .card:hover {
@@ -38,7 +39,7 @@
 @media (max-width: 991px) {
     .choose-card-body {
     position: absolute;
-    top: 65%;
+    top: 25%;
     background: rgba(36, 38, 37, 0.39) !important;
     width: 100%;
     margin-left: 0;
