@@ -5,8 +5,9 @@
     <link rel="stylesheet" href={{ asset('css/navbar.css') }} />
     <link rel="stylesheet" href={{ asset('css/homepage.css') }} />
     <link rel="stylesheet" href={{ asset('/css/gallery.css') }} />
-    <link href="https://cdn.rawgit.com/sachinchoolur/lightgallery.js/master/dist/css/lightgallery.css" rel="stylesheet">
-    <link rel="stylesheet" href={{ asset('css/lightgallery.css') }} />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.3/photoswipe.css"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.3/default-skin/default-skin.css"> 
+
 {% endblock stylesheets %}
 
 {% block title %}{{pageTitle}}{% endblock title %}
@@ -22,62 +23,92 @@
     </div>
     <!-- END JUMBOTRON -->
 
-    <!-- content -->
-        {# <div class="container list-content">
-            <div class="row">
-                <div class="col-xs-12 offset-xs-0 col-md-10 offset-md-1">
-                    {{fullContent|markdown}}
-                </div>
-            </div>
-        </div> #}
-    <!-- end content -->
-
-    <!-- foto gallery content -->
-    <div class="container-fluid">
-        <div id='lightgallery' class="row">
-            {% for foto in fotos %}
-            {% if loop.index == 4 %}
-                <div class="col-lg-4 col-md-6 col-xs-12 gallery-col" style="height: 35vh; overflow: scroll;" data-src={{foto.file.url}} data-sub-html={{foto.description}} data-pinterest-text="Pin it1" data-tweet-text="share on twitter 1">      
+    <div class="container-fluid list-content">
+        <div class="row">
+            <div class="col-lg-4 col-md-12 col-xs-12 gallery-col" style="height: 70vh; overflow: scroll;">      
                 In het najaar van 2015 werd door onze goede collega van Stijltuinen een strak ontwerp gemaakt voor de tuin rondom een nieuwbouwwoning. Deze designtuin in Heemstede is met veel zorg ontworpen en klopt tot in de kleinste details. Over alles is nagedacht: van speciaal handgemaakte hekwerken tot en met het moderne tuinmeubilair. Heel mooi is de vlonderbaan van Esthec (composiet), welke in de voortuin de entree verfraaid en in de achtertuin doorloopt in een as naar de achtererfgrens.
 
                 In goed overleg met Stijltuinen heeft Groenregie de tuin in het voorjaar van 2016 aangelegd. Voordat met de aanleg werd begonnen is goed nagedacht over de constructie van verschillende onderdelen in de tuin, zoals o.a. het stevig funderen van het metalen hekwerk. Tevens hebben we van tevoren op tekening bepaald waar alle kabels en leidingen het beste ingegraven konden worden. De eerder genoemde vlonderbaan van Esthec is blind gemonteerd op onderbalken. Zo is er geen schroefje zichtbaar. Naast de vlonderbanen ligt een bijzonder verhardingsmateriaal: Beach Pebbles in de specie. Zo liggen deze keien muurvast en is deze oppervlakte goed beloopbaar. Andere toegepaste verhardingsmaterialen zijn Schellevis tegels van 100 x 100 cm (op de oprit zijn deze tegels zelfs 8 cm dik), gebakken klinkers met een onkruidwerende voeg en het zogenaamde Black Beauty grind op speciale stabilisatieplaten. Rondom de ingegraven trampoline hebben wij kunstgras gelegd. Dit past natuurlijk perfect in het plaatje van een onderhoudsarme tuin: een wens van de tuineigenaar.Twee speciaal op maat gemaakte watertafels zorgen voor een speels effect in de tuin en diverse strakke plantenbakken met wintergroene beplanting maken deze designtuin in Heemstede ook aantrekkelijk in de winterperiode.
 
                 De tuineigenaren zijn blij met het mooie, moderne eindresultaat. Onderhoud behoeft de tuin maar weinig. In de zomer zorgt een automatisch werkend beregeningssysteem voor de vochtvoorziening. Sfeervolle 12 volt tuinverlichting door middel van Led-techniek zorgt voor een adembenemend plaatje in de schemering.
+            </div>
+            <div class="col-lg-8 col-md-12 col-xs-12">
+                <div class="row">
+                    {% for foto in fotos %}
+                        {% if loop.index < 5 %}
+                        <div class="col-lg-6 col-md-6 col-xs-12 gallery-col">
+                            <div
+                            class="photoswipe-image"  
+                            data-index={{loop.index - 1}}
+                            onclick="openPhotoswipe({{loop.index - 1}})"
+                            style="
+                            height: 35vh; 
+                            background: url({{foto.file.url}}) no-repeat center center; background-size: cover"
+                            >
+                            </div>
+                        </div>
+                        <img class="d-none" src={{foto.file.url}} alt={{foto.title}} title={{foto.title}}>       
+                        {% endif %}         
+                    {% endfor %}
                 </div>
-            {% else %}
-                <div class="col-lg-4 col-md-6 col-xs-12 gallery-col" data-src={{foto.file.url}} data-sub-html={{foto.description}} data-pinterest-text="Pin it1" data-tweet-text="share on twitter 1">
-                    <div  
-                    style="
-                    height: 35vh; 
-                    background: url({{foto.file.url}}) no-repeat center center; background-size: cover"
-                    >
-                    </div>
-                    <img class="d-none" src={{foto.file.url}} alt={{foto.title}} title={{foto.title}}>
+            </div>
+        </div>
+        <div class="row">
+        {% for foto in fotos %}
+            {% if loop.index > 4 %}
+            <div class="col-lg-4 col-md-6 col-xs-12 gallery-col">
+                <div  
+                class="photoswipe-image"
+                data-index={{loop.index - 1}}
+                onclick="openPhotoswipe({{loop.index - 1}})"
+                style="
+                height: 35vh; 
+                background: url({{foto.file.url}}) no-repeat center center; background-size: cover"
+                >
                 </div>
-            {% endif %}
-            {% endfor %}
+                <img class="d-none" src={{foto.file.url}} alt={{foto.title}} title={{foto.title}}>
+            </div>      
+            {% endif %}         
+        {% endfor %}
         </div>
     </div>
     <!-- end fluid content -->
+
+    {% include 'default/photoswipe/photoswipe.html.twig' %} {# include photoswipe media #}
 {% endblock body %}
 
 {% block javascripts %}
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/picturefill/2.3.1/picturefill.min.js"></script>
-    <script src="https://cdn.rawgit.com/sachinchoolur/lightgallery.js/master/dist/js/lightgallery.js"></script>
-    <script src="https://cdn.rawgit.com/sachinchoolur/lg-pager.js/master/dist/lg-pager.js"></script>
-    <script src="https://cdn.rawgit.com/sachinchoolur/lg-autoplay.js/master/dist/lg-autoplay.js"></script>
-    <script src="https://cdn.rawgit.com/sachinchoolur/lg-fullscreen.js/master/dist/lg-fullscreen.js"></script>
-    <script src="https://cdn.rawgit.com/sachinchoolur/lg-zoom.js/master/dist/lg-zoom.js"></script>
-    <script src="https://cdn.rawgit.com/sachinchoolur/lg-hash.js/master/dist/lg-hash.js"></script>
-    <script src="https://cdn.rawgit.com/sachinchoolur/lg-share.js/master/dist/lg-share.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.3/photoswipe.min.js"></script> 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.3/photoswipe-ui-default.min.js"></script> 
+
     <script>
-        lightGallery(document.getElementById('lightgallery'), {
-            mode: 'lg-fade',
-            cssEasing : 'cubic-bezier(0.25, 0, 0.25, 1)',
-            hideBarsDelay: 1000
+        var fotos = {{ fotos|json_encode|raw }}
+        var galleryItems = [];
+
+        fotos.forEach((foto) => {
+            galleryItems.push(
+                {
+                    src: foto.fields.file.url,
+                    w: foto.fields.file.details.image.width,
+                    h: foto.fields.file.details.image.height
+                }
+            )
         });
-    </script>  
+
+        var openPhotoswipe = (index) => {
+            console.log("index inside photoswipe", index);
+            var pswpElement = document.querySelectorAll('.pswp')[0];
+            
+            var options = {
+                index: parseInt(index), // start at first slide
+                shareEl: false,
+            };
+
+            var gallery = new PhotoSwipe( pswpElement, PhotoSwipeUI_Default, galleryItems, options);
+            gallery.init();
+        }
+    </script>
 {% endblock javascripts %}
