@@ -44,6 +44,9 @@
     height: 35vh; 
 }
 
+.pswp__button--arrow--left:before, .pswp__button--arrow--right:before {
+    background-color: transparent !important;
+}
 @media (max-width: 575px) { }
 
 /* Medium devices (mobile, 768px and down) */
