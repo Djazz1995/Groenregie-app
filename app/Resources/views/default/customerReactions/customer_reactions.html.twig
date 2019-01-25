@@ -38,11 +38,6 @@
             <p class="quote">
               {{reaction.auteur}}
             </p>
-            {% if reaction.getProject() is defined and reaction.getProject() is not null %}
-            <p>
-              <a href="{{ path('impression_specific', {'name': reaction.getProject.urlNaam, 'id': reaction.getProject.id })}}" class="btn btn-outline-primary float-right groenregie-green groenregie-button more-info">Bekijk dit project</a>
-            </p>
-            {% endif %}
           </div>
         </div>
         {% endfor %}
