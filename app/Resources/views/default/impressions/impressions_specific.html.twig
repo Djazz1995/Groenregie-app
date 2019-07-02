@@ -28,40 +28,24 @@
             <div class="col-lg-8 col-md-12 col-xs-12">
                 <div class="row">
                     {% for foto in fotos %}
-                        {% if loop.index < 5 %}
+                        {# {% if loop.index < 5 %} #}
                         <div class="col-lg-6 col-md-6 col-xs-12 gallery-col">
-                            {# <div
-                            class="photoswipe-image"  
-                            data-index={{loop.index - 1}}
-                            onclick="openPhotoswipe({{loop.index - 1}})"
-                            style="
-                            background: url({{foto.file.url}}) no-repeat center center; background-size: cover"
-                            >
-                            </div> #}
                             <img style="width: 100%; height: auto" src={{foto.file.url}} alt={{foto.title}} title={{foto.title}} onclick="openPhotoswipe({{loop.index - 1}})">  
                         </div>     
-                        {% endif %}         
+                        {# {% endif %}          #}
                     {% endfor %}
                 </div>
             </div>
         </div>
-        <div class="row">
+        {# <div class="row">
         {% for foto in fotos %}
             {% if loop.index > 4 %}
             <div class="col-lg-4 col-md-6 col-xs-12 gallery-col">
-                {# <div  
-                class="photoswipe-image"
-                data-index={{loop.index - 1}}
-                onclick="openPhotoswipe({{loop.index - 1}})"
-                style="
-                background: url({{foto.file.url}}) no-repeat center center; background-size: cover"
-                >
-                </div> #}
                 <img style="width: 100%; height: auto" src={{foto.file.url}} alt={{foto.title}} title={{foto.title}} onclick="openPhotoswipe({{loop.index - 1}})">
             </div>      
             {% endif %}         
         {% endfor %}
-        </div>
+        </div> #}
     </div>
     <!-- end fluid content -->
 

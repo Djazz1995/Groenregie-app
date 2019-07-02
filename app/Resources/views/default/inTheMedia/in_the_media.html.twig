@@ -36,11 +36,15 @@
           <div class="col-md-8 col-sm-12">
             <h3 class="mt-2 our-partner-h">{{mediaitem.naam}}</h3>
             {{mediaitem.korteText|markdown}}
-            {% if mediaitem.getPdf() is defined and mediaitem.getPdf() is not null %}
             <p>
-              <a target="_blank" href={{mediaitem.getPdf().getFile().url}} class="btn btn-outline-primary float-right groenregie-green groenregie-button more-info">Bekijk artikel</a>
+              {% if mediaitem.getPdf() is defined and mediaitem.getPdf() is not null %}
+                <a target="_blank" href={{mediaitem.getPdf().getFile().url}} class="btn btn-outline-primary float-right groenregie-green groenregie-button more-info">Bekijk artikel</a>
+              {% endif %}
+
+              {% if mediaitem.getVideo() is defined and mediaitem.getVideo() is not null %}
+                <a target="_blank" href={{mediaitem.getVideo().getFile().url}} class="btn btn-outline-primary float-right groenregie-green groenregie-button more-info">Bekijk video</a>
+              {% endif %}
             </p>
-            {% endif %}
           </div>
         </div>
         {% endfor %}
