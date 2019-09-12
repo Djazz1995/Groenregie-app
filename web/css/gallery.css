@@ -1,73 +1,77 @@
 .photo-card {
-    position: relative;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: column;
-    flex-direction: column;
-    min-width: 0;
-    word-wrap: break-word;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  min-width: 0;
+  word-wrap: break-word;
 }
 
 .photo-card .card-img-top {
-    width: 100%;
-    border-top-left-radius: 0;
-    border-top-right-radius: 0;
+  width: 100%;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
 }
 
 .gallery-col {
-    padding: 8px;
+  padding: 8px;
 }
 
 .gallery-col:hover {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 .gallery-text-col {
-    height: 100%;
-    overflow: hidden;
-    border: 1px solid #8CC63F;
-    padding: 15px;
+  height: 100%;
+  overflow: hidden;
+  border: 1px solid #8cc63f;
+  padding: 15px;
+  overflow-y: scroll;
 }
 
 .gallery-text-col p {
-    overflow: hidden;
+  overflow: hidden;
 }
 
 .gallery-text-col:hover {
-    cursor: auto;
+  cursor: auto;
 }
 
 .photoswipe-image {
-    height: 35vh; 
+  height: 35vh;
 }
 
-.pswp__button--arrow--left:before, .pswp__button--arrow--right:before {
-    background-color: transparent !important;
+.pswp__button--arrow--left:before,
+.pswp__button--arrow--right:before {
+  background-color: transparent !important;
 }
 
-@media (max-width: 575px) { }
+@media (max-width: 575px) {
+}
 
 /* Medium devices (mobile, 768px and down) */
-@media (max-width: 767px) {}
+@media (max-width: 767px) {
+}
 
 /* Large devices (tablets, 992px and down) */
-@media (max-width: 991px) { 
-    .gallery-text-col {
-        height: 100%;
-        overflow: hidden;
-        border: 1px solid transparent;
-        padding-top: 15px;
-        padding-bottom: 15px;
-        background: rgb(0,0,0, .2);
-    }
+@media (max-width: 991px) {
+  .gallery-text-col {
+    height: 100%;
+    border: 1px solid transparent;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    background: rgb(0, 0, 0, 0.2);
+  }
 
-    .photoswipe-image {
-        height: 40vh;
-    }
+  .photoswipe-image {
+    height: 40vh;
+  }
 }
 
 /* Extra large devices (large desktops, 1200px and up) */
-@media (max-width: 1199px) { }
+@media (max-width: 1199px) {
+}

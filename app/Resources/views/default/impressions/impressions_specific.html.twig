@@ -15,9 +15,9 @@
 {% block body %}
     <hr class="nav-seperator">
 
-    <div class="container-fluid list-content px-5">
-        <div class="row">
-            <div class="col-lg-4 col-md-12 col-xs-12 gallery-col">
+    <div class="container-fluid list-content px-lg-5">
+        <div class="row" style="align-items: flex-start">
+            <div class="col-lg-4 col-md-12 col-xs-12 gallery-col" id="textRow">
                 <div class="gallery-text-col">
                     <h4><b>{{pageHeader}}</b></h4>
                     <p>
@@ -25,19 +25,19 @@
                     </p>
                 </div>
             </div>
-            <div class="col-lg-8 col-md-12 col-xs-12">
+            <div class="col-lg-8 col-md-12 col-xs-12" id="imageRow">
                 <div class="row">
                     {% for foto in fotos %}
-                        {# {% if loop.index < 5 %} #}
+                        {% if loop.index < 5 %}
                         <div class="col-lg-6 col-md-6 col-xs-12 gallery-col">
                             <img style="width: 100%; height: auto" src={{foto.file.url}} alt={{foto.title}} title={{foto.title}} onclick="openPhotoswipe({{loop.index - 1}})">  
                         </div>     
-                        {# {% endif %}          #}
+                        {% endif %}         
                     {% endfor %}
                 </div>
             </div>
         </div>
-        {# <div class="row">
+        <div class="row">
         {% for foto in fotos %}
             {% if loop.index > 4 %}
             <div class="col-lg-4 col-md-6 col-xs-12 gallery-col">
@@ -45,7 +45,7 @@
             </div>      
             {% endif %}         
         {% endfor %}
-        </div> #}
+        </div>
     </div>
     <!-- end fluid content -->
 
@@ -87,4 +87,18 @@
             gallery.init();
         }
     </script>
+        <script>
+    $( document ).ready(function() {
+        console.log($(window).width())
+        if ($(window).width() > 767) {
+            document.getElementById('textRow').style.height = document.getElementById('imageRow').offsetHeight +  'px'
+        }
+    });
+
+    $(window).resize(function()  {
+        if ($(window).width() > 767) {
+            document.getElementById('textRow').style.height = document.getElementById('imageRow').offsetHeight +  'px'
+        }
+    })
+</script>
 {% endblock javascripts %}

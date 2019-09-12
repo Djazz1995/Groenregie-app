@@ -1,55 +1,54 @@
 .card {
-    border-radius: none;
-    border: none;
-    height: 78vh;
-    overflow: hidden;
+  border-radius: none;
+  border: none;
+  height: 78vh;
+  overflow: hidden;
 }
 
 .choose-card-body {
-    position: absolute;
-    top: 45%;
-    background: rgba(36, 38, 37, 0.39) !important;
-    width: 86%;
-    margin-left: 7%;
-    bottom: 10%;
-    transition: .65s;
-    height: 310px;
-    overflow: hidden;
+  position: absolute;
+  top: 10%;
+  background: rgba(36, 38, 37, 0.5) !important;
+  width: 86%;
+  margin-left: 7%;
+  bottom: 10%;
+  transition: 0.65s;
+  /* height: 310px; */
+  overflow: hidden;
 }
 
 .card:hover {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 .with-background {
-    -webkit-background-size: contain;
-    -moz-background-size: contain;
-    background-size: contain;
-    -o-background-size: contain;
+  -webkit-background-size: contain;
+  -moz-background-size: contain;
+  background-size: contain;
+  -o-background-size: contain;
 }
 
-@media (max-width: 575px) { }
+@media (max-width: 575px) {
+}
 
 /* Medium devices (tablets, 768px and down) */
 @media (max-width: 767px) {
-
- }
+}
 
 /* Large devices (desktops, 992px and down) */
 @media (max-width: 991px) {
-    .choose-card-body {
+  .choose-card-body {
     position: absolute;
-    top: 25%;
-    background: rgba(36, 38, 37, 0.39) !important;
+    top: 0%;
+    background: rgba(36, 38, 37, 0.5) !important;
     width: 100%;
     margin-left: 0;
     bottom: 0%;
-    transition: .65s;
+    transition: 0.65s;
     height: 100%;
+  }
 }
- }
 
 /* Extra large devices (large desktops, 1200px and down) */
-@media (max-width: 1199px) { 
-
+@media (max-width: 1199px) {
 }
