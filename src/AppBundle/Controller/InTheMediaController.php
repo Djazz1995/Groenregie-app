@@ -10,7 +10,7 @@ use Knp\Bundle\MarkdownBundle\MarkdownParserInterface;
 class InTheMediaController extends Controller
 {
     /**
-     * @Route("/in-de-media", name="in_the_media")
+     * @Route("/nieuws-en-update", name="news_and_updates")
      */
     public function indexAction(Request $request)
     {
@@ -31,7 +31,7 @@ class InTheMediaController extends Controller
     }
 
     /**
-     * @Route("/in-de-media/{name}/{id}", name="in_the_media_specific")
+     * @Route("/nieuws-en-updates/{name}/{id}", name="news_and_updates_specific")
      */
     public function partnerAction(Request $request, $name, $id)
     {

@@ -101,6 +101,14 @@ p:blank {
     color: white !important;
 }
 
+.button-no-border {
+    border: none;
+}
+
+.button-no-border:hover {
+    background: 'red' !important
+}
+
 .groenregie-green {
     color: #8CC63F !important;
 }

@@ -26,21 +26,22 @@
     <!-- END JUMBOTRON -->
 
       <!-- container list-content -->
-        <div class="container list-content">
+        <div class="container-fluid px-4 list-content">
+            <div class="row">
             {% for partner in partners %}
-                <div class="row our-partner-media">
-                    <div class="col-md-4 col-sm-12">
-                        <img class="mr-0" src={{partner.thumbnail.file.url}} alt={{partner.thumbnail.title}} title={{partner.thumbnail.title}}>
-                    </div>
-                    <div class="col-md-8 col-sm-12">
-                        <h3 class="mt-2">{{partner.naam}}</h3>
-                        {{partner.korteText|markdown}}
-                        <p>
-                            <a href={{path('our_partners_specific', {'name': partner.urlNaam, 'id': partner.id})}} class="btn btn-outline-primary float-right groenregie-green groenregie-button more-info">Meer info</a>
-                        </p>
+                <div  class="col-sm-12 col-md-6 pt-3 px-4">
+                    <div class="row green-border h-100 py-4">
+                        <div class="col-md-8 col-sm-12">
+                            <h3 class="mt-2">{{partner.naam}}</h3>
+                            {{partner.korteText|markdown}}
+                        </div>
+                        <div class="col-md-4 col-sm-12">
+                            <img width="100%" class="mr-0" src={{partner.thumbnail.file.url}} alt={{partner.thumbnail.title}} title={{partner.thumbnail.title}}>
+                        </div>
                     </div>
                 </div>
 			{% endfor %}
+            </div>
         </div>
       <!-- end fluid content -->
 {% endblock body %}
