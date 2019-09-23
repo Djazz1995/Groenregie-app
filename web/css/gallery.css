@@ -37,6 +37,10 @@
   overflow: hidden;
 }
 
+.gallery-text-col::-webkit-scrollbar {
+  display: none;
+}
+
 .gallery-text-col:hover {
   cursor: auto;
 }
