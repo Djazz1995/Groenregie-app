@@ -30,7 +30,7 @@
                     {% for foto in fotos %}
                         {% if loop.index < 5 %}
                         <div class="col-lg-6 col-md-6 col-xs-12 gallery-col">
-                            <img style="width: 100%; height: auto" src={{foto.file.url}} alt={{foto.title}} title={{foto.title}} onclick="openPhotoswipe({{loop.index - 1}})">  
+                            <img class="gallery-image-imp" style="width: 100%; height: auto" src={{foto.file.url}} alt={{foto.title}} title={{foto.title}} onclick="openPhotoswipe({{loop.index - 1}})">  
                         </div>     
                         {% endif %}         
                     {% endfor %}
@@ -41,7 +41,7 @@
         {% for foto in fotos %}
             {% if loop.index > 4 %}
             <div class="col-lg-4 col-md-6 col-xs-12 gallery-col">
-                <img style="width: 100%; height: auto" src={{foto.file.url}} alt={{foto.title}} title={{foto.title}} onclick="openPhotoswipe({{loop.index - 1}})">
+                <img class="gallery-image" style="width: 100%; height: auto" src={{foto.file.url}} alt={{foto.title}} title={{foto.title}} onclick="openPhotoswipe({{loop.index - 1}})">
             </div>      
             {% endif %}         
         {% endfor %}
@@ -89,10 +89,23 @@
     </script>
         <script>
     $( document ).ready(function() {
-        console.log($(window).width())
         if ($(window).width() > 767) {
             document.getElementById('textRow').style.height = document.getElementById('imageRow').offsetHeight +  'px'
         }
+
+        var imagesLoaded = 0;
+        var photos = {{ fotos|json_encode|raw }}
+
+        $(".gallery-image-imp").each(function (image) {
+            this.onload = function () {
+                imagesLoaded++
+                if(imagesLoaded === 4) {
+                    if ($(window).width() > 767) {
+                        document.getElementById('textRow').style.height = document.getElementById('imageRow').offsetHeight +  'px'
+                    }
+                }
+            }
+        })
     });
 
     $(window).resize(function()  {
