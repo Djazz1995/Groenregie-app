@@ -13,20 +13,18 @@
 {% block body %}
     <div class="nav-seperator"></div>
     <!-- JUMBOTRON -->
-      <div class="jumbotron jumbotron-fluid transparent white padding-bottom-15 reduced-jumbotron">
-        <div class="container">
-          <h2>{{pageHeader}}</h2>
-          {% if pageHeader is not null %}
-          <p class="lead">
-            {{pageSubHeader}}
-          </p>
-          {% endif %}
-        </div>
+      <div class="jumbotron px-lg-5 jumbotron-fluid transparent white padding-bottom-15 reduced-jumbotron">
+        <h2>{{pageHeader}}</h2>
+        {% if pageHeader is not null %}
+        <p class="lead">
+          {{pageSubHeader}}
+        </p>
+        {% endif %}
       </div>
       <!-- END JUMBOTRON -->
 
     <!-- container list-content -->
-      <div class="container-fluid list-content">
+      <div class="container-fluid px-lg-5  list-content">
       {% for reaction in customerReactions %}
         <div class="row our-partner-media">
           <div class="col-md-4 col-sm-12">
