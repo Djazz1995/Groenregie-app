@@ -16,8 +16,8 @@ a:active {
 }
 
 .px-list {
-  padding-right: 13%;
-  padding-left: 13%;
+  padding-right: 13% !important;
+  padding-left: 13% !important;
 }
 
 .welcome-text a:hover {
@@ -359,6 +359,10 @@ p:blank {
 
 /* Large devices (desktops, 992px and up) */
 @media (max-width: 991px) {
+  .px-list {
+    padding-right: 7%;
+    padding-left: 7%;
+  }
 }
 
 /* Extra large devices (large desktops, 1200px and up) */
