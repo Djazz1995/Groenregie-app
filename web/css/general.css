@@ -355,13 +355,18 @@ p:blank {
   .quote {
     max-width: none;
   }
+
+  .px-list {
+    padding-right: 0% !important;
+    padding-left: 0% !important;
+  }
 }
 
 /* Large devices (desktops, 992px and up) */
 @media (max-width: 991px) {
   .px-list {
-    padding-right: 7%;
-    padding-left: 7%;
+    padding-right: 2% !important;
+    padding-left: 2% !important;
   }
 }
 
