@@ -4,7 +4,8 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-        <title>{% block title %}Groenregie{% endblock %}</title>
+        <title>{% block title %}{{metaTitle}}{% endblock %}</title>
+        <meta name="description" content="{% block metadescription %}{{metaDescription}}{% endblock %}" />
 
         <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
         <!-- Bootstrap CSS -->

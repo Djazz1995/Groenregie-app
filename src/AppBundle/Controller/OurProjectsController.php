@@ -24,7 +24,8 @@ class OurProjectsController extends Controller
         // replace this example code with whatever you need
         return $this->render('default/impressions/impressions_choose.html.twig', [
             'base_dir' => realpath($this->getParameter('kernel.project_dir')).DIRECTORY_SEPARATOR,
-            'pageTitle' => $entry->getPaginaTitel(),
+            'metaTitle' => $entry->getMetatitle(),
+            'metaDescription' => $entry->getMetaDescription(),
             'parentActive' => 'ourProjects',
             'subActive' => 'none',
             'entry' => $entry
@@ -43,7 +44,8 @@ class OurProjectsController extends Controller
         // replace this example code with whatever you need
         return $this->render('default/impressions/impressions.html.twig', [
             'base_dir' => realpath($this->getParameter('kernel.project_dir')).DIRECTORY_SEPARATOR,
-            'pageTitle' => $entry->getPaginaTitel(),
+            'metaTitle' => $entry->getModernMetaTitle(),
+            'metaDescription' => $entry->getModernMetaDescription(),
             'pageHeader' => $entry->getPaginaHeader(),
             'pageSubHeader' => $entry->getPaginaSubHeader(),
             'projectPhotos' => $entry->getModerneTuinen(),
@@ -65,7 +67,8 @@ class OurProjectsController extends Controller
         // replace this example code with whatever you need
         return $this->render('default/impressions/impressions.html.twig', [
             'base_dir' => realpath($this->getParameter('kernel.project_dir')).DIRECTORY_SEPARATOR,
-            'pageTitle' => $entry->getPaginaTitel(),
+            'metaTitle' => $entry->getNatuurlijkMetaTitle(),
+            'metaDescription' => $entry->getNatuurlijkMetaDescription(),
             'pageHeader' => $entry->getPaginaHeader(),
             'pageSubHeader' => $entry->getPaginaSubHeader(),
             'projectPhotos' => $entry->getNatuurlijkeTuinen(),
@@ -87,34 +90,13 @@ class OurProjectsController extends Controller
         // replace this example code with whatever you need
         return $this->render('default/impressions/impressions.html.twig', [
             'base_dir' => realpath($this->getParameter('kernel.project_dir')).DIRECTORY_SEPARATOR,
-            'pageTitle' => $entry->getPaginaTitel(),
+            'metaTitle' => $entry->getDakMetaTitle(),
+            'metaDescription' => $entry->getDakMetaDescription(),
             'pageHeader' => $entry->getPaginaHeader(),
             'pageSubHeader' => $entry->getPaginaSubHeader(),
             'projectPhotos' => $entry->getDakTuinen(),
             'parentActive' => 'ourProjects',
             'subActive' => 'roofGardens',
-            'entry' => $entry
-        ]);
-    }
-
-    /**
-     * @Route("/projecten/dakterrassen", name="impressions_patios")
-     */
-    public function patioAction(Request $request)
-    {
-        $client = new \Contentful\Delivery\Client('4113452de26e27759b744718344945d5afc601e64e217688758dbfd649076208', 'jjzsv0091dq4', 'master');
-
-        $entry = $client->getEntry('5hJyBJIxfUuAKSqWyEk4Y2');
-
-        // replace this example code with whatever you need
-        return $this->render('default/impressions/impressions.html.twig', [
-            'base_dir' => realpath($this->getParameter('kernel.project_dir')).DIRECTORY_SEPARATOR,
-            'pageTitle' => $entry->getPaginaTitel(),
-            'pageHeader' => $entry->getPaginaHeader(),
-            'pageSubHeader' => $entry->getPaginaSubHeader(),
-            'projectPhotos' => $entry->getNatuurlijkeTuinen(),
-            'parentActive' => 'ourProjects',
-            'subActive' => 'patios',
             'entry' => $entry
         ]);
     }
@@ -129,7 +111,9 @@ class OurProjectsController extends Controller
         $entry = $client->getEntry($id);
         
         return $this->render('default/impressions/impressions_specific.html.twig', [
-            'pageTitle' => $entry->getTitel(),
+            'base_dir' => realpath($this->getParameter('kernel.project_dir')).DIRECTORY_SEPARATOR,
+            'metaTitle' => $entry->getMetaTitle(),
+            'metaDescription' => $entry->getMetaDescription(),
             'pageHeader' => $entry->getTitel(),
             'thumbnail' => $entry->getThumbnail(),
             'fullContent' => $entry->getVolleText(),

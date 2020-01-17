@@ -21,7 +21,8 @@ class NewsUpdatesController extends Controller
         // replace this example code with whatever you need
         return $this->render('default/newsAndUpdates/news_updates.html.twig', [
             'base_dir' => realpath($this->getParameter('kernel.project_dir')).DIRECTORY_SEPARATOR,
-            'pageTitle' => $entry->getPaginaTitel(),
+            'metaTitle' => $entry->getMetaTitle(),
+            'metaDescription' => $entry->getMetaDescription(),
             'pageHeader' => $entry->getPaginaHeader(),
             'pageSubHeader' => $entry->getPaginaSubHeader(),
             'news' => $entry->getNieuwsitems(),

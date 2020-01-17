@@ -89,6 +89,8 @@ class ContactController extends Controller
         // replace this example code with whatever you need
         return $this->render('default/contact/contact.html.twig', [
             'base_dir' => realpath($this->getParameter('kernel.project_dir')).DIRECTORY_SEPARATOR,
+            'metaTitle' => 'Contact met Groenregie, laat uw gegevens hier achter',
+            'metaDescription' => 'Geïnteresseerd in de ideale tuin en complete ontzorging m.b.t. de aanleg, vul dan nu het contactformulier in en wij bellen u zo snel mogelijk',
             'companyName' => $entry->getBedrijfsnaam(),
             'address' => $entry->getAdres(),
             'zipcode' => $entry->getPostcode(),

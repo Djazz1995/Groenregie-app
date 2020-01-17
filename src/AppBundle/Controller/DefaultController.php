@@ -20,7 +20,8 @@ class DefaultController extends Controller
         // replace this example code with whatever you need
         return $this->render('default/homepage/index.html.twig', [
             'base_dir' => realpath($this->getParameter('kernel.project_dir')).DIRECTORY_SEPARATOR,
-            'pageTitle' => $entry->getPaginaTitel(),
+            'metaTitle' => $entry->getMetatitle(),
+            'metaDescription' => $entry->getMetadescription(),
             'slideshowFotos' => $entry->getSlideshowFotos(),
             'navbar' => 'absolute-navbar',
             'footer' => false,

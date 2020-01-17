@@ -22,7 +22,8 @@ class AboutUsController extends Controller
         // replace this example code with whatever you need
         return $this->render('default/aboutUs/about_us.html.twig', [
             'base_dir' => realpath($this->getParameter('kernel.project_dir')).DIRECTORY_SEPARATOR,
-            'pageTitle' => $entry->getPaginaTitel(),
+            'metaTitle' => $entry->getMetatitle(),
+            'metaDescription' => $entry->getMetadescription(),
             'pageHeader' => $entry->getPaginaHeader(),
             'content' => $entry->getInhoud(),
             'contentAuthor' => $entry->getInhoudAuteur(),
@@ -50,7 +51,8 @@ class AboutUsController extends Controller
         // replace this example code with whatever you need
         return $this->render('default/aboutUs/about_us.html.twig', [
             'base_dir' => realpath($this->getParameter('kernel.project_dir')).DIRECTORY_SEPARATOR,
-            'pageTitle' => $entry->getPaginaTitel(),
+            'metaTitle' => $entry->getOntwerpMetatitle(),
+            'metaDescription' => $entry->getOntwerpMetadescription(),
             'pageHeader' => $entry->getOntwerpTitel(),
             'content' => $entry->getOntwerp(),
             'parentActive' => 'aboutUs',
@@ -72,7 +74,8 @@ class AboutUsController extends Controller
         // replace this example code with whatever you need
         return $this->render('default/aboutUs/about_us.html.twig', [
             'base_dir' => realpath($this->getParameter('kernel.project_dir')).DIRECTORY_SEPARATOR,
-            'pageTitle' => $entry->getPaginaTitel(),
+            'metaTitle' => $entry->getAanlegMetatitle(),
+            'metaDescription' => $entry->getAanlegMetadescription(),
             'pageHeader' => $entry->getAanlegTitel(),
             'content' => $entry->getAanleg(),
             'parentActive' => 'aboutUs',
@@ -94,7 +97,8 @@ class AboutUsController extends Controller
         // replace this example code with whatever you need
         return $this->render('default/aboutUs/about_us.html.twig', [
             'base_dir' => realpath($this->getParameter('kernel.project_dir')).DIRECTORY_SEPARATOR,
-            'pageTitle' => $entry->getPaginaTitel(),
+            'metaTitle' => $entry->getOnderhoudMetatitle(),
+            'metaDescription' => $entry->getOnderhoudMetadescription(),
             'pageHeader' => $entry->getOnderhoudTitel(),
             'content' => $entry->getOnderhoud(),
             'parentActive' => 'aboutUs',
