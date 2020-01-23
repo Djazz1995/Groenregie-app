@@ -1,0 +1,37 @@
+language: php
+
+php:
+    - 5.6
+    - 7.0
+    - 7.1
+    - nightly
+
+env:
+    - SYMFONY_VERSION=3.2.*
+    - SYMFONY_VERSION=3.3.*
+    - SYMFONY_VERSION=3.4.*
+
+before_script:
+    - composer self-update
+    - composer require symfony/symfony:${SYMFONY_VERSION}
+
+script: ./vendor/bin/phpunit --coverage-text
+
+notifications:
+    email:
+        - "florian.preusner@8points.de"
+
+matrix:
+    allow_failures:
+        - env: SYMFONY_VERSION=dev-master
+        - php: nightly
+    include:
+        - env: SYMFONY_VERSION=3.2.*
+          php: hhvm
+          dist: trusty
+        - env: SYMFONY_VERSION=3.3.*
+          php: hhvm
+          dist: trusty
+        - env: SYMFONY_VERSION=3.4.*
+          php: hhvm
+          dist: trusty
