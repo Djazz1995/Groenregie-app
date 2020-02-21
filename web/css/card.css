@@ -16,6 +16,8 @@
   /* height: 310px; */
   overflow: hidden;
   overflow-y: scroll;
+  display: flex;
+  flex-direction: column;
 }
 
 .with-background {

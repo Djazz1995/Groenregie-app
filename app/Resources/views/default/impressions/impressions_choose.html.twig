@@ -19,14 +19,14 @@
                 style="background: url({{entry.getModerneTuinenFoto().file.url}}) no-repeat center center; background-size: cover"
             >
                 <div class="choose-card-body px-3 py-2">
-                    <h3 class="w-100 text-center pt-1"><b>{{ entry.getModerneTuinenKeuzeMenuTitle() }}</b></h3>
-                    <div>
+                    <div style="flex: 5;">
+                        <h3 class="w-100 text-center pt-1"><b>{{ entry.getModerneTuinenKeuzeMenuTitle() }}</b></h3>
                         <p>
                             {{ entry.moderneTuinenKeuzeMenuTekst() }}
                         </p>
-                        <div class="text-center mt-5 mb-1">
-                            <a class="green-button" href={{path('impressions_modern_gardens')}}>- bekijk projecten -</a>
-                        </div>
+                    </div>
+                    <div class="text-center mt-5 mb-1" style="flex: 1;">
+                        <a class="green-button" href={{path('impressions_modern_gardens')}}>- bekijk projecten -</a>
                     </div>
                 </div>
             </div>
@@ -35,14 +35,14 @@
         <div class="col-sm-6 col-md-6 col-lg-4">
             <div class="card mb-4 shadow-sm with-background" style="background: url({{entry.getNatuurlijkeTuinenFoto().file.url}}) no-repeat center center; background-size: cover">
                 <div class="choose-card-body px-3 py-2">
-                    <h3 class="w-100 text-center pt-1"><b>{{ entry.getNatuurlijkeTuinenKeuzeMenuTitle() }}</b></h3>
-                    <div>
+                    <div style="flex: 5;">
+                        <h3 class="w-100 text-center pt-1"><b>{{ entry.getNatuurlijkeTuinenKeuzeMenuTitle() }}</b></h3>
                         <p>
                             {{ entry.getNatuurlijkeTuinenKeuzeMenuTekst() }}
                         </p>
-                        <div class="text-center mt-5 mb-1">
-                            <a class="green-button" href={{path('impressions_nature_gardens')}}>- bekijk projecten -</a>
-                        </div>
+                    </div>
+                    <div class="text-center mt-5 mb-1" style="flex: 1;">
+                        <a class="green-button" href={{path('impressions_nature_gardens')}}>- bekijk projecten -</a>
                     </div>
                 </div>
             </div>
@@ -51,14 +51,14 @@
         <div class="col-sm-12 col-md-12 col-lg-4">
             <div class="card mb-4 shadow-sm with-background" style="background: url({{entry.getDakTuinenFoto().file.url}}) no-repeat center center; background-size: cover">
                 <div class="choose-card-body px-3 py-2">
-                    <h3 class="w-100 text-center pt-1"><b>{{ entry.getDakTuinenKeuzeMenuTitle() }}</b></h3>
-                    <div>
+                    <div style="flex: 5;">
+                        <h3 class="w-100 text-center pt-1"><b>{{ entry.getDakTuinenKeuzeMenuTitle() }}</b></h3>
                         <p>
                             {{ entry.getDakTuinenKeuzeMenuTekst() }}
                         </p>
-                        <div class="text-center mt-5 mb-1">
-                            <a class="green-button" href={{path('impressions_roof_gardens')}}>- bekijk projecten -</a>
-                        </div>
+                    </div>
+                    <div class="text-center mt-5 mb-1" style="flex: 1;">
+                        <a class="green-button" href={{path('impressions_roof_gardens')}}>- bekijk projecten -</a>
                     </div>
                 </div>
             </div>
