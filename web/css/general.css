@@ -104,22 +104,22 @@ p:blank {
 }
 
 .green-button {
-  background: rgb(140, 198, 63);
-  padding: 10px;
-  padding-top: 13px;
+  /* background: rgb(140, 198, 63); */
+  /* padding: 10px; */
+  /* padding-top: 13px; */
   text-align: "center";
-  color: black;
+  color: rgb(140, 198, 63);
 }
 
 .green-button:hover {
-  background: rgb(113, 160, 51);
   text-decoration: none;
-  color: black;
+  color: rgb(113, 160, 51);
 }
 
 .groenregie-button {
   border-color: #8cc63f;
   border-radius: 0;
+  font-weight: bolder;
 }
 
 .groenregie-button:hover {
