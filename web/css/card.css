@@ -15,10 +15,7 @@
   transition: 0.65s;
   /* height: 310px; */
   overflow: hidden;
-}
-
-.card:hover {
-  cursor: pointer;
+  overflow-y: scroll;
 }
 
 .with-background {

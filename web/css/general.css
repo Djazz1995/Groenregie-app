@@ -103,6 +103,20 @@ p:blank {
   padding-right: 0;
 }
 
+.green-button {
+  background: rgb(140, 198, 63);
+  padding: 10px;
+  padding-top: 13px;
+  text-align: "center";
+  color: black;
+}
+
+.green-button:hover {
+  background: rgb(113, 160, 51);
+  text-decoration: none;
+  color: black;
+}
+
 .groenregie-button {
   border-color: #8cc63f;
   border-radius: 0;
