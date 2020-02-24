@@ -91,6 +91,16 @@ p:blank {
   color: black;
 }
 
+/* Hide scrollbar for Chrome, Safari and Opera */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE and Edge */
+.no-scrollbar {
+  -ms-overflow-style: none;
+}
+
 .no-padding {
   padding: 0;
 }
@@ -104,9 +114,6 @@ p:blank {
 }
 
 .green-button {
-  /* background: rgb(140, 198, 63); */
-  /* padding: 10px; */
-  /* padding-top: 13px; */
   text-align: "center";
   color: rgb(140, 198, 63);
 }
