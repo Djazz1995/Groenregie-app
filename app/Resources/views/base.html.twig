@@ -21,6 +21,16 @@
         <link rel="stylesheet" href={{ asset('css/footer.css') }} />
 
         <link rel="icon" type="image/png" sizes="96x96" href={{asset('images/marker-image.jpeg')}}>
+
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-158991576-1"></script>
+        <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-158991576-1');
+        </script>
     </head>
     <body>
         {% include 'default/navbar/primaryNav.html.twig' %}
@@ -45,14 +55,5 @@
         var marginTop = $('.green-outline').offset().top;
         $('.floating-image-right img').offset({top: marginTop});
     }
-    </script>
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-158991576-1"></script>
-    <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', 'UA-158991576-1');
     </script>
 </html>
