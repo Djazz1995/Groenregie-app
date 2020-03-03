@@ -95,6 +95,15 @@ p:blank {
   padding: 0;
 }
 
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE and Edge */
+.no-scrollbar {
+  -ms-overflow-style: none;
+}
+
 .no-padding-left {
   padding-left: 0;
 }
