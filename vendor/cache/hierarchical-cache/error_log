@@ -1,0 +1,2 @@
+[20-Feb-2020 07:30:55 UTC] PHP Fatal error:  Interface 'Psr\Cache\CacheItemPoolInterface' not found in /home/groenregie/dev.groenregie.nl/vendor/cache/hierarchical-cache/HierarchicalPoolInterface.php on line 21
+[20-Feb-2020 23:58:33 UTC] PHP Fatal error:  Interface 'Psr\Cache\CacheItemPoolInterface' not found in /home/groenregie/dev.groenregie.nl/vendor/cache/hierarchical-cache/HierarchicalPoolInterface.php on line 21

@@ -1,0 +1,9 @@
+[20-Feb-2020 07:19:48 UTC] PHP Fatal error:  Interface 'Cache\Adapter\Common\PhpCachePool' not found in /home/groenregie/dev.groenregie.nl/vendor/cache/adapter-common/AbstractCachePool.php on line 26
+[20-Feb-2020 10:19:52 UTC] PHP Fatal error:  Interface 'Cache\TagInterop\TaggableCacheItemPoolInterface' not found in /home/groenregie/dev.groenregie.nl/vendor/cache/adapter-common/PhpCachePool.php on line 19
+[20-Feb-2020 12:23:16 UTC] PHP Fatal error:  Interface 'Cache\Adapter\Common\HasExpirationTimestampInterface' not found in /home/groenregie/dev.groenregie.nl/vendor/cache/adapter-common/PhpCacheItem.php on line 19
+[20-Feb-2020 14:18:59 UTC] PHP Fatal error:  Interface 'Cache\Adapter\Common\PhpCacheItem' not found in /home/groenregie/dev.groenregie.nl/vendor/cache/adapter-common/CacheItem.php on line 21
+[20-Feb-2020 19:26:04 UTC] PHP Fatal error:  Interface 'Cache\Adapter\Common\HasExpirationTimestampInterface' not found in /home/groenregie/dev.groenregie.nl/vendor/cache/adapter-common/PhpCacheItem.php on line 19
+[20-Feb-2020 20:46:15 UTC] PHP Fatal error:  Interface 'Cache\Adapter\Common\PhpCachePool' not found in /home/groenregie/dev.groenregie.nl/vendor/cache/adapter-common/AbstractCachePool.php on line 26
+[20-Feb-2020 20:54:50 UTC] PHP Fatal error:  Interface 'Cache\TagInterop\TaggableCacheItemPoolInterface' not found in /home/groenregie/dev.groenregie.nl/vendor/cache/adapter-common/PhpCachePool.php on line 19
+[20-Feb-2020 23:03:28 UTC] PHP Fatal error:  Interface 'Cache\TagInterop\TaggableCacheItemPoolInterface' not found in /home/groenregie/dev.groenregie.nl/vendor/cache/adapter-common/PhpCachePool.php on line 19
+[21-Feb-2020 02:34:19 UTC] PHP Fatal error:  Interface 'Cache\Adapter\Common\PhpCacheItem' not found in /home/groenregie/dev.groenregie.nl/vendor/cache/adapter-common/CacheItem.php on line 21

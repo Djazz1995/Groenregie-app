@@ -1,0 +1,2 @@
+[20-Feb-2020 23:24:15 UTC] PHP Fatal error:  Class 'Cache\Adapter\Common\AbstractCachePool' not found in /home/groenregie/dev.groenregie.nl/vendor/cache/void-adapter/VoidCachePool.php on line 21
+[21-Feb-2020 03:02:14 UTC] PHP Fatal error:  Class 'Cache\Adapter\Common\AbstractCachePool' not found in /home/groenregie/dev.groenregie.nl/vendor/cache/void-adapter/VoidCachePool.php on line 21
