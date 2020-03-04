@@ -10,7 +10,6 @@
 {% block body %}
 	<div id="slideshow">
 			<img id="banner-placeholder" src={{ asset('images/banner.jpg') }} title="banner-placeholder" alt="banner-placeholder" />
-
 			{% for image in slideshowFotos %}
 					<img src={{image.file.url}} }} title={{image.title}} alt={{image.title}} />
 			{% endfor %}
