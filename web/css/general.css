@@ -113,17 +113,14 @@ p:blank {
 }
 
 .green-button {
-  background: rgb(140, 198, 63);
   padding: 10px;
-  padding-top: 13px;
   text-align: "center";
-  color: black;
+  color: rgb(140, 198, 63);
 }
 
 .green-button:hover {
-  background: rgb(113, 160, 51);
   text-decoration: none;
-  color: black;
+  color: rgb(109, 155, 49);
 }
 
 .groenregie-button {
