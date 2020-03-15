@@ -61,8 +61,6 @@
         var fotos = {{ fotos|json_encode|raw }}
         var galleryItems = [];
 
-        console.log(fotos[0].fields);
-
         fotos.forEach((foto) => {
             galleryItems.push(
                 {
