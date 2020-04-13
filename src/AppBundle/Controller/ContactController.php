@@ -42,7 +42,7 @@ class ContactController extends Controller
 
                 $message = (new \Swift_Message($contactForm->getSubject()))
                     ->setFrom('noreply@groenregie.nl')
-                    ->setTo('vanderhoogtdjazz@gmail.com')
+                    ->setTo('info@groenregie.nl')
                     ->setSubject($contactForm->getSubject())
                     ->setBody(
                         $this->renderView(
